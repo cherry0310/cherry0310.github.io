@@ -7,7 +7,7 @@
 
     
 
-    <title>Hexo | cherry的技术小窝</title>
+    <title>hexo | cherry的技术小窝</title>
     <meta name="author" content="cherry">
     
     
@@ -154,15 +154,23 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/命令清单/">
-                    命令清单 <span class="right">1 篇</span></a>
+                    命令清单 <span class="right">2 篇</span></a>
                 </a>
             </li>
 
         
 
             <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/命令清单/Hexo/">
-                    Hexo <span class="right">1 篇</span></a>
+                <a class="no-padding" href="/categories/命令清单/git/">
+                    git <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/命令清单/hexo/">
+                    hexo <span class="right">1 篇</span></a>
                 </a>
             </li>
 
@@ -199,7 +207,7 @@
         
 
         
-            <a class="breadcrumb" href="/categories/命令清单/Hexo/">Hexo</a>
+            <a class="breadcrumb" href="/categories/命令清单/hexo/">hexo</a>
         
     </div>
 </nav>
@@ -208,10 +216,10 @@
 
     <div class="collection mt-0">
         
-            <a href="/2017/07/20/hello-world/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-07-20T11:43:28.000Z">2017-07-20</time>
+            <a href="/2017/07/24/hello-world/" class="collection-item grey-text text-darken-1">
+                <time datetime="2017-07-24T11:14:24.000Z">2017-07-24</time>
                 <span>&nbsp;&nbsp;&nbsp;</span>
-                Hexo基本命令
+                hexo 基本命令
             </a>
         
     </div>
@@ -220,7 +228,7 @@
 </div>
 
         <div class="fixed-action-btn float-sitemap">
-    <a class="btn-floating btn-large red">
+    <a class="btn-floating btn-large pink">
       <i class="fa fa-caret-square-o-up"></i>
     </a>
     <ul>
@@ -277,7 +285,7 @@
     </div>
     
 
-    <div class="footer-copyright red-link-context">
+    <div class="footer-copyright pink-link-context">
         <div class="container">
             © 2017 hellocherry.cn, All rights reserved.
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -374,11 +382,11 @@
             $('li.tab a').hover(function() {
                 $(this).toggleClass('text-lighten-4');
             });
-            $('.indicator').addClass('red lighten-2');
+            $('.indicator').addClass('pink lighten-2');
 
             
             // 添加new标签
-            $('').append('<span class="new badge red"></span>');
+            $('').append('<span class="new badge pink"></span>');
             
 
             // 搜索功能
@@ -453,7 +461,7 @@
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -475,7 +483,7 @@
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

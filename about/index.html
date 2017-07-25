@@ -156,15 +156,23 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/命令清单/">
-                    命令清单 <span class="right">1 篇</span></a>
+                    命令清单 <span class="right">2 篇</span></a>
                 </a>
             </li>
 
         
 
             <li class="collapse-level-1" collapse-level="1">
-                <a class="no-padding" href="/categories/命令清单/Hexo/">
-                    Hexo <span class="right">1 篇</span></a>
+                <a class="no-padding" href="/categories/命令清单/git/">
+                    git <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/命令清单/hexo/">
+                    hexo <span class="right">1 篇</span></a>
                 </a>
             </li>
 
@@ -226,7 +234,7 @@
                 <section class="about-me">
                     <h1 class="green-text">
                         <i class="fa fa-street-view"></i>关于</h1>
-                    <div class="entry red-link-context">
+                    <div class="entry pink-link-context">
                         <p>大家好，我是cherry。欢迎来到我的个人技术博客。</p>
 
                     </div>
@@ -400,15 +408,15 @@
                             
                                 <div class="project-item col m6">
                                     <div class="">
-                                        <div class="card medium red-link-context">
+                                        <div class="card medium pink-link-context">
                                             <div class="card-image">
                                                 <img class="card-cover-image" src="https://d13yacurqjgara.cloudfront.net/users/138819/screenshots/2578899/dribbble_800x600_01_1x.png">
                                                 <span class="card-title">你的项目A</span>
                                                 <div class="card-tag">
                                                     
-                                                        <span class="chip white-text red lighten-1">2016年</span>
+                                                        <span class="chip white-text pink lighten-1">2016年</span>
                                                     
-                                                        <span class="chip white-text red lighten-1">项目标签</span>
+                                                        <span class="chip white-text pink lighten-1">项目标签</span>
                                                     
                                                 </div>
                                             </div>
@@ -424,15 +432,15 @@
                             
                                 <div class="project-item col m6">
                                     <div class="">
-                                        <div class="card medium red-link-context">
+                                        <div class="card medium pink-link-context">
                                             <div class="card-image">
                                                 <img class="card-cover-image" src="https://d13yacurqjgara.cloudfront.net/users/4094/screenshots/2578885/time-lords-drib_1x.jpg">
                                                 <span class="card-title">你的作品B</span>
                                                 <div class="card-tag">
                                                     
-                                                        <span class="chip white-text red lighten-1">Github</span>
+                                                        <span class="chip white-text pink lighten-1">Github</span>
                                                     
-                                                        <span class="chip white-text red lighten-1">设计</span>
+                                                        <span class="chip white-text pink lighten-1">设计</span>
                                                     
                                                 </div>
                                             </div>
@@ -462,7 +470,7 @@
 </div>
 
         <div class="fixed-action-btn float-sitemap">
-    <a class="btn-floating btn-large red">
+    <a class="btn-floating btn-large pink">
       <i class="fa fa-caret-square-o-up"></i>
     </a>
     <ul>
@@ -519,7 +527,7 @@
     </div>
     
 
-    <div class="footer-copyright red-link-context">
+    <div class="footer-copyright pink-link-context">
         <div class="container">
             © 2017 hellocherry.cn, All rights reserved.
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -616,11 +624,11 @@
             $('li.tab a').hover(function() {
                 $(this).toggleClass('text-lighten-4');
             });
-            $('.indicator').addClass('red lighten-2');
+            $('.indicator').addClass('pink lighten-2');
 
             
             // 添加new标签
-            $('').append('<span class="new badge red"></span>');
+            $('').append('<span class="new badge pink"></span>');
             
 
             // 搜索功能
@@ -695,7 +703,7 @@
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -717,7 +725,7 @@
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword pink lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

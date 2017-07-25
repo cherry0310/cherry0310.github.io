@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-20T11:43:28.000Z</updated>
+  <updated>2017-07-25T10:22:45.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,26 +16,78 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hexo基本命令</title>
-    <link href="http://yoursite.com/2017/07/20/hello-world/"/>
-    <id>http://yoursite.com/2017/07/20/hello-world/</id>
-    <published>2017-07-20T11:43:28.000Z</published>
-    <updated>2017-07-20T11:43:28.000Z</updated>
+    <title>html 面试问题</title>
+    <link href="http://yoursite.com/2017/07/24/htmlQuestion/"/>
+    <id>http://yoursite.com/2017/07/24/htmlQuestion/</id>
+    <published>2017-07-24T11:15:03.000Z</published>
+    <updated>2017-07-25T10:22:45.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-doctype的作用&quot;&gt;&lt;a href=&quot;#1-doctype的作用&quot; class=&quot;headerlink&quot; title=&quot;1.doctype的作用&quot;&gt;&lt;/a&gt;1.doctype的作用&lt;/h3&gt;&lt;p&gt;文档类型声明，声明文档是用哪个版本的html编写的，告诉浏览器用哪种规则集来解析文档中的标记。&lt;/p&gt;
+&lt;h3 id=&quot;2-标准模式、混杂模式、准标准模式的区别&quot;&gt;&lt;a href=&quot;#2-标准模式、混杂模式、准标准模式的区别&quot; class=&quot;headerlink&quot; title=&quot;2.标准模式、混杂模式、准标准模式的区别&quot;&gt;&lt;/a&gt;2.标准模式、混杂模式、准标准模式的区别&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;区别&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;标准模式：&lt;/strong&gt; 浏览器几乎遵循最新标准来呈现网页&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;混杂模式：&lt;/strong&gt; 页面以一种宽松的向后兼容的方式呈现&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;准标准模式：&lt;/strong&gt; 几乎要符合标准模式，仍包含一部分混杂模式中的行为&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="面试准备" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo 基本命令</title>
+    <link href="http://yoursite.com/2017/07/24/hello-world/"/>
+    <id>http://yoursite.com/2017/07/24/hello-world/</id>
+    <published>2017-07-24T11:14:24.000Z</published>
+    <updated>2017-07-24T11:14:24.000Z</updated>
     
     <summary type="html">
     
       &lt;ul&gt;
-&lt;li&gt;Hexo官网—- &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Hexo官网—— &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Hexo官方文档—— &lt;a href=&quot;https://hexo.io/docs/&quot; tar
     
     </summary>
     
       <category term="命令清单" scheme="http://yoursite.com/categories/%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95/"/>
     
-      <category term="Hexo" scheme="http://yoursite.com/categories/%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95/Hexo/"/>
+      <category term="hexo" scheme="http://yoursite.com/categories/%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95/hexo/"/>
     
+    
+      <category term="命令清单" scheme="http://yoursite.com/tags/%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95/"/>
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 基本命令</title>
+    <link href="http://yoursite.com/2017/07/24/gitCommand/"/>
+    <id>http://yoursite.com/2017/07/24/gitCommand/</id>
+    <published>2017-07-24T03:26:51.000Z</published>
+    <updated>2017-07-24T11:14:16.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h5 id=&quot;克隆github上的项目到本地&quot;&gt;&lt;a href=&quot;#克隆github上的项目到本地&quot; class=&quot;headerlink&quot; title=&quot;克隆github上的项目到本地&quot;&gt;&lt;/a&gt;克隆github上的项目到本地&lt;/h5&gt;&lt;figure class=&quot;highli
+    
+    </summary>
+    
+      <category term="命令清单" scheme="http://yoursite.com/categories/%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95/"/>
+    
+      <category term="git" scheme="http://yoursite.com/categories/%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95/git/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="命令清单" scheme="http://yoursite.com/tags/%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95/"/>
     
   </entry>
   

@@ -3,10 +3,116 @@
   
     
     <entry>
-      <title><![CDATA[Hexo基本命令]]></title>
-      <url>/2017/07/20/hello-world/</url>
+      <title><![CDATA[html 面试问题]]></title>
+      <url>/2017/07/24/htmlQuestion/</url>
+      <content type="html"><![CDATA[<h3 id="1-doctype的作用"><a href="#1-doctype的作用" class="headerlink" title="1.doctype的作用"></a>1.doctype的作用</h3><p>文档类型声明，声明文档是用哪个版本的html编写的，告诉浏览器用哪种规则集来解析文档中的标记。</p>
+<h3 id="2-标准模式、混杂模式、准标准模式的区别"><a href="#2-标准模式、混杂模式、准标准模式的区别" class="headerlink" title="2.标准模式、混杂模式、准标准模式的区别"></a>2.标准模式、混杂模式、准标准模式的区别</h3><blockquote>
+<p>区别</p>
+</blockquote>
+<p><strong>标准模式：</strong> 浏览器几乎遵循最新标准来呈现网页</p>
+<p><strong>混杂模式：</strong> 页面以一种宽松的向后兼容的方式呈现</p>
+<p><strong>准标准模式：</strong> 几乎要符合标准模式，仍包含一部分混杂模式中的行为</p>
+<a id="more"></a>
+<blockquote>
+<p>触发方式</p>
+</blockquote>
+<p>XHTML包含完整形式的DOCTYPE、HTML4.01包含DTD的DOCTYPE、HTML5包含&lt;!DOCTYPE html>都是标准模式；没有DOCTYPE导致混杂模式。</p>
+<blockquote>
+<p>具体区别</p>
+</blockquote>
+<p>针对盒模型中的宽度，标准模式下呈现出content-box的效果，设置的宽度不包括padding和border；混杂模式下呈现出border-box的效果，即设置的宽度已经包含了padding和border。</p>
+<blockquote>
+<p>模式的检测</p>
+</blockquote>
+<p>document.compatMode (标准模式值为CSS1Compat; 混杂模式值为BackCompat)</p>
+<blockquote>
+<p>X-UA-Compatible</p>
+</blockquote>
+<p>在HTML页面可以指定较低版本的浏览器模式来渲染页面<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=7"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="3-HTML和XHTML的区别"><a href="#3-HTML和XHTML的区别" class="headerlink" title="3.HTML和XHTML的区别"></a>3.HTML和XHTML的区别</h3><p><strong>HTML</strong> 超文本标记语言，它是基于SGML编写的</p>
+<p><strong>XHTML</strong> 可扩展文本标记语言，它是基于XML编写的，比前者更严格，XML是SGML的子集。</p>
+<p>在XHTML中DOCTYPE强制，html/head/body/title强制，元素必须被正确嵌套、标签关闭、标签小写，属性小写、值有引号等。</p>
+<h3 id="4-data-属性的优点"><a href="#4-data-属性的优点" class="headerlink" title="4.data- 属性的优点"></a>4.data- 属性的优点</h3><p>data-是HTML5新定义的属性，用于<strong>存储页面上的私有自定义数据</strong> ，每个元素上都可以定义data-属性。优点是这些存储的数据可以被JavaScript使用，免于ajax获取，优化用户体验。</p>
+<p>获取的方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ele.getAttribute(<span class="string">'data-num'</span>) <span class="comment">//方式一</span></div><div class="line">ele.dataset.num              <span class="comment">//方式二</span></div></pre></td></tr></table></figure></p>
+<h3 id="5-HTML5有哪些特性"><a href="#5-HTML5有哪些特性" class="headerlink" title="5.HTML5有哪些特性"></a>5.HTML5有哪些特性</h3><ul>
+<li>更多的语义化标签：header/footer/nav/section/article</li>
+<li>更多的表单元素：calendar/email/date/time/url/search</li>
+<li>canvas元素和svg</li>
+<li>媒体元素audio和vedio</li>
+<li>本地离线存储localStorage和sessionStorage</li>
+<li>地理定位API</li>
+<li>通信API</li>
+<li>web worker API</li>
+</ul>
+<h3 id="6-cookie-sessionStorage-localStorage的区别"><a href="#6-cookie-sessionStorage-localStorage的区别" class="headerlink" title="6.cookie,sessionStorage,localStorage的区别"></a>6.cookie,sessionStorage,localStorage的区别</h3><p>首先这三种都是客户端的存储方案，后两者成为webStorage，是HTML5中新增的特性。以前的本地数据存储是通过cookie实现的，cookie数据会在同源的每个http请求中携带，所以不适合存储大量数据。</p>
+<blockquote>
+<p>大小</p>
+</blockquote>
+<p>cookie控制在4kb，webStorage建议每个网站5MB</p>
+<blockquote>
+<p>方法</p>
+</blockquote>
+<p>cookie没有封装好的操作方法，只能通过document.cookie来操作；webStorage有封装好的API：getItem/setItem/removeItem/clear<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sessionStorage.setItem(<span class="string">'count'</span>, <span class="string">'123'</span>)</div><div class="line"><span class="keyword">let</span> count = sessionStorage.getItem(<span class="string">'count'</span>)</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>请求</p>
+</blockquote>
+<p>cookie每次请求都携带，webStorage不会自动发给服务器，只存在本地</p>
+<blockquote>
+<p>生命周期</p>
+</blockquote>
+<p>cookie可以设置一个过期时间，在过期时间之前一直有效；sessionStorage在窗口关闭前有效，它是针对会话的存储；localStorage一直有效。</p>
+<blockquote>
+<p>作用域</p>
+</blockquote>
+<p>cookie作用于所有同源窗口；sessionStorage只作用于当前窗口；localStorage作用于所有同源页面</p>
+<h3 id="7-lt-script-gt-lt-script-async-gt-lt-script-defer-gt-的区别"><a href="#7-lt-script-gt-lt-script-async-gt-lt-script-defer-gt-的区别" class="headerlink" title="7.&lt; script &gt;, &lt; script async &gt;, &lt; script defer &gt;的区别"></a>7.&lt; script &gt;, &lt; script async &gt;, &lt; script defer &gt;的区别</h3><blockquote>
+<p>script</p>
+</blockquote>
+<p>浏览器会根据 &lt; script &gt;在页面中出现的顺序依次进行解析，阻塞后面网页的呈现。</p>
+<blockquote>
+<p>script async</p>
+</blockquote>
+<p>表示立即下载脚本，下载完就解析执行，不会影响其他操作的执行，比如其他资源的下载。不能确定多个异步加载的脚本文件的执行顺序。通常用于不改变页面结构的CDN文件等。</p>
+<blockquote>
+<p>script defer</p>
+</blockquote>
+<p>表示立即下载脚本，但延迟到文档完全被解析和页面显示之后(onload之前)再执行。HTML5要求多个延迟加载的脚本文件按顺序执行，但是现实中不一定，所以最好只包含一个延迟脚本。</p>
+<h3 id="8-为什么把css的link放在头部，把js的script放在body之前"><a href="#8-为什么把css的link放在头部，把js的script放在body之前" class="headerlink" title="8.为什么把css的link放在头部，把js的script放在body之前"></a>8.为什么把css的link放在头部，把js的script放在body之前</h3><p>浏览器解析一个文档是按照 <strong>从上到下单线程</strong> 的方式解析的，浏览器加载一个网站时的步骤：1.拿到HTML网页；2.开始解析HTML；3.解析器遇到link标签，会并行下载资源，不会停止对当前文档的处理； 4.解析器遇到script标签，浏览器请求脚本文件，此时会停止解析页面上的其他HTML；5. 下载解析执行完脚本文件，解析器继续解析剩下的HTML文档。</p>
+<p>把link放头部，先加载解析样式文件，之后解析并呈现body中元素的时候可以避免页面混乱；把script放底部，这样脚本文件就不会阻塞页面内容的呈现，而且如果脚本中有操作dom结构也不会出现错误。</p>
+<h3 id="9-浏览器内核"><a href="#9-浏览器内核" class="headerlink" title="9.浏览器内核"></a>9.浏览器内核</h3><p>浏览器内核又叫浏览器渲染引擎，负责解释网页语法并渲染页面。</p>
+<ul>
+<li>IE: Trident</li>
+<li>Firefox: Gecko</li>
+<li>Chrome: Webkit Blink</li>
+<li>Safari: webkit</li>
+<li>Opera: Blink</li>
+</ul>
+<h3 id="10-rem和em"><a href="#10-rem和em" class="headerlink" title="10.rem和em"></a>10.rem和em</h3><blockquote>
+<p>rem</p>
+</blockquote>
+<p>rem是指以HTML页面的根元素html的字体大小为基准，设置其他元素的字体大小。具体大小是根元素字体大小*rem值</p>
+<blockquote>
+<p>em</p>
+</blockquote>
+<p>当使用em单位时，以父元素的字体大小为基准。具体大小是父元素字体大小*em值</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 面试准备 </tag>
+            
+            <tag> html </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[hexo 基本命令]]></title>
+      <url>/2017/07/24/hello-world/</url>
       <content type="html"><![CDATA[<ul>
-<li>Hexo官网—- <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a></li>
+<li>Hexo官网—— <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a></li>
 <li>Hexo官方文档—— <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a></li>
 <li>常见问题—— <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a></li>
 <li>提问列表—— <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a></li>
@@ -25,14 +131,58 @@
             
             <category> 命令清单 </category>
             
-            <category> Hexo </category>
+            <category> hexo </category>
             
         </categories>
         
         
         <tags>
             
+            <tag> 命令清单 </tag>
+            
             <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[git 基本命令]]></title>
+      <url>/2017/07/24/gitCommand/</url>
+      <content type="html"><![CDATA[<h5 id="克隆github上的项目到本地"><a href="#克隆github上的项目到本地" class="headerlink" title="克隆github上的项目到本地"></a>克隆github上的项目到本地</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/cherry0310/xxx.git</div></pre></td></tr></table></figure>
+<h5 id="新建develop分支"><a href="#新建develop分支" class="headerlink" title="新建develop分支"></a>新建develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -b develop</div></pre></td></tr></table></figure>
+<h5 id="删除develop分支"><a href="#删除develop分支" class="headerlink" title="删除develop分支"></a>删除develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d develop</div></pre></td></tr></table></figure>
+<h5 id="切换到develop分支"><a href="#切换到develop分支" class="headerlink" title="切换到develop分支"></a>切换到develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout develop</div></pre></td></tr></table></figure>
+<h5 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch</div></pre></td></tr></table></figure>
+<h5 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a>查看所有分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -a</div></pre></td></tr></table></figure>
+<h5 id="添加修改"><a href="#添加修改" class="headerlink" title="添加修改"></a>添加修改</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add .</div><div class="line">git add -A</div></pre></td></tr></table></figure>
+<h5 id="提交修改"><a href="#提交修改" class="headerlink" title="提交修改"></a>提交修改</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -m <span class="string">'修改原因'</span></div></pre></td></tr></table></figure>
+<h5 id="推送到远程"><a href="#推送到远程" class="headerlink" title="推送到远程"></a>推送到远程</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push</div></pre></td></tr></table></figure>
+<h5 id="将本地develop分支关联到远程develop分支"><a href="#将本地develop分支关联到远程develop分支" class="headerlink" title="将本地develop分支关联到远程develop分支"></a>将本地develop分支关联到远程develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push --<span class="built_in">set</span>-upstream origin develop</div></pre></td></tr></table></figure>
+<h5 id="查看版本之间的差异"><a href="#查看版本之间的差异" class="headerlink" title="查看版本之间的差异"></a>查看版本之间的差异</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git diff</div></pre></td></tr></table></figure>
+<h5 id="将develop分支合并到master"><a href="#将develop分支合并到master" class="headerlink" title="将develop分支合并到master"></a>将develop分支合并到master</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git merge --no-ff develop</div></pre></td></tr></table></figure>
+<ul>
+<li>不使用–no-ff，git执行快进式合并，master直接指向develop分支</li>
+<li>使用–no-ff，git执行正常合并，在master支上生成新节点</li>
+</ul>
+<h5 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d develop</div></pre></td></tr></table></figure>
+<h5 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin --delete develop</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> 命令清单 </category>
+            
+            <category> git </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> 命令清单 </tag>
             
         </tags>
         

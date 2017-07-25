@@ -7,13 +7,21 @@
 
     
 
-    <title>归档 | cherry的技术小窝</title>
+    <title>html 面试问题 | cherry的技术小窝</title>
     <meta name="author" content="cherry">
+    
+    <meta name="description" content="1.doctype的作用文档类型声明，声明文档是用哪个版本的html编写的，告诉浏览器用哪种规则集来解析文档中的标记。
+2.标准模式、混杂模式、准标准模式的区别
+区别
+
+标准模式： 浏览器几乎遵循最新标准来呈现网页
+混杂模式： 页面以一种宽松的向后兼容的方式呈现
+准标准模式： 几乎要符合标准模式，仍包含一部分混杂模式中的行为">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="html 面试问题"/>
     <meta property="og:site_name" content="cherry的技术小窝"/>
 
     
@@ -199,52 +207,164 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper green">
-        <span class="breadcrumb">当前位置（归档）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
         
 
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>html 面试问题</h1>
+    
 
 
-    <ul class="collapsible mt-0" data-collapsible="accordion">
+            </div>
+            <time class="pink-link-context" datetime="2017-07-24T11:15:03.000Z"><a href="/2017/07/24/htmlQuestion/">2017-07-24</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
+            <a href="/tags/面试准备/" class="chip pink lighten-1">面试准备</a>
         
-            <li>
-                <div class="collapsible-header active">
-                    <i class="fa fa-archive"></i>2017
-                </div>
-                <div class="collapsible-body">
-                    <div class="collection">
-                        
-                            <a href="/2017/07/24/htmlQuestion/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-24T11:15:03.000Z">2017-07-24</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                html 面试问题
-                            </a>
-                        
-                            <a href="/2017/07/24/hello-world/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-24T11:14:24.000Z">2017-07-24</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                hexo 基本命令
-                            </a>
-                        
-                            <a href="/2017/07/24/gitCommand/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-24T03:26:51.000Z">2017-07-24</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                git 基本命令
-                            </a>
-                        
-                    </div>
-                </div>
-            </li>
+            <a href="/tags/html/" class="chip pink lighten-1">html</a>
         
-    </ul>
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-doctype的作用"><span class="section table-of-contents-text">1.doctype的作用</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-标准模式、混杂模式、准标准模式的区别"><span class="section table-of-contents-text">2.标准模式、混杂模式、准标准模式的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-HTML和XHTML的区别"><span class="section table-of-contents-text">3.HTML和XHTML的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-data-属性的优点"><span class="section table-of-contents-text">4.data- 属性的优点</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-HTML5有哪些特性"><span class="section table-of-contents-text">5.HTML5有哪些特性</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-cookie-sessionStorage-localStorage的区别"><span class="section table-of-contents-text">6.cookie,sessionStorage,localStorage的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7-lt-script-gt-lt-script-async-gt-lt-script-defer-gt-的区别"><span class="section table-of-contents-text">7.< script >, < script async >, < script defer >的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#8-为什么把css的link放在头部，把js的script放在body之前"><span class="section table-of-contents-text">8.为什么把css的link放在头部，把js的script放在body之前</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#9-浏览器内核"><span class="section table-of-contents-text">9.浏览器内核</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#10-rem和em"><span class="section table-of-contents-text">10.rem和em</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h3 id="1-doctype的作用"><a href="#1-doctype的作用" class="headerlink" title="1.doctype的作用"></a>1.doctype的作用</h3><p>文档类型声明，声明文档是用哪个版本的html编写的，告诉浏览器用哪种规则集来解析文档中的标记。</p>
+<h3 id="2-标准模式、混杂模式、准标准模式的区别"><a href="#2-标准模式、混杂模式、准标准模式的区别" class="headerlink" title="2.标准模式、混杂模式、准标准模式的区别"></a>2.标准模式、混杂模式、准标准模式的区别</h3><blockquote>
+<p>区别</p>
+</blockquote>
+<p><strong>标准模式：</strong> 浏览器几乎遵循最新标准来呈现网页</p>
+<p><strong>混杂模式：</strong> 页面以一种宽松的向后兼容的方式呈现</p>
+<p><strong>准标准模式：</strong> 几乎要符合标准模式，仍包含一部分混杂模式中的行为</p>
+<a id="more"></a>
+<blockquote>
+<p>触发方式</p>
+</blockquote>
+<p>XHTML包含完整形式的DOCTYPE、HTML4.01包含DTD的DOCTYPE、HTML5包含&lt;!DOCTYPE html>都是标准模式；没有DOCTYPE导致混杂模式。</p>
+<blockquote>
+<p>具体区别</p>
+</blockquote>
+<p>针对盒模型中的宽度，标准模式下呈现出content-box的效果，设置的宽度不包括padding和border；混杂模式下呈现出border-box的效果，即设置的宽度已经包含了padding和border。</p>
+<blockquote>
+<p>模式的检测</p>
+</blockquote>
+<p>document.compatMode (标准模式值为CSS1Compat; 混杂模式值为BackCompat)</p>
+<blockquote>
+<p>X-UA-Compatible</p>
+</blockquote>
+<p>在HTML页面可以指定较低版本的浏览器模式来渲染页面<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=7"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="3-HTML和XHTML的区别"><a href="#3-HTML和XHTML的区别" class="headerlink" title="3.HTML和XHTML的区别"></a>3.HTML和XHTML的区别</h3><p><strong>HTML</strong> 超文本标记语言，它是基于SGML编写的</p>
+<p><strong>XHTML</strong> 可扩展文本标记语言，它是基于XML编写的，比前者更严格，XML是SGML的子集。</p>
+<p>在XHTML中DOCTYPE强制，html/head/body/title强制，元素必须被正确嵌套、标签关闭、标签小写，属性小写、值有引号等。</p>
+<h3 id="4-data-属性的优点"><a href="#4-data-属性的优点" class="headerlink" title="4.data- 属性的优点"></a>4.data- 属性的优点</h3><p>data-是HTML5新定义的属性，用于<strong>存储页面上的私有自定义数据</strong> ，每个元素上都可以定义data-属性。优点是这些存储的数据可以被JavaScript使用，免于ajax获取，优化用户体验。</p>
+<p>获取的方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ele.getAttribute(<span class="string">'data-num'</span>) <span class="comment">//方式一</span></div><div class="line">ele.dataset.num              <span class="comment">//方式二</span></div></pre></td></tr></table></figure></p>
+<h3 id="5-HTML5有哪些特性"><a href="#5-HTML5有哪些特性" class="headerlink" title="5.HTML5有哪些特性"></a>5.HTML5有哪些特性</h3><ul>
+<li>更多的语义化标签：header/footer/nav/section/article</li>
+<li>更多的表单元素：calendar/email/date/time/url/search</li>
+<li>canvas元素和svg</li>
+<li>媒体元素audio和vedio</li>
+<li>本地离线存储localStorage和sessionStorage</li>
+<li>地理定位API</li>
+<li>通信API</li>
+<li>web worker API</li>
+</ul>
+<h3 id="6-cookie-sessionStorage-localStorage的区别"><a href="#6-cookie-sessionStorage-localStorage的区别" class="headerlink" title="6.cookie,sessionStorage,localStorage的区别"></a>6.cookie,sessionStorage,localStorage的区别</h3><p>首先这三种都是客户端的存储方案，后两者成为webStorage，是HTML5中新增的特性。以前的本地数据存储是通过cookie实现的，cookie数据会在同源的每个http请求中携带，所以不适合存储大量数据。</p>
+<blockquote>
+<p>大小</p>
+</blockquote>
+<p>cookie控制在4kb，webStorage建议每个网站5MB</p>
+<blockquote>
+<p>方法</p>
+</blockquote>
+<p>cookie没有封装好的操作方法，只能通过document.cookie来操作；webStorage有封装好的API：getItem/setItem/removeItem/clear<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sessionStorage.setItem(<span class="string">'count'</span>, <span class="string">'123'</span>)</div><div class="line"><span class="keyword">let</span> count = sessionStorage.getItem(<span class="string">'count'</span>)</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>请求</p>
+</blockquote>
+<p>cookie每次请求都携带，webStorage不会自动发给服务器，只存在本地</p>
+<blockquote>
+<p>生命周期</p>
+</blockquote>
+<p>cookie可以设置一个过期时间，在过期时间之前一直有效；sessionStorage在窗口关闭前有效，它是针对会话的存储；localStorage一直有效。</p>
+<blockquote>
+<p>作用域</p>
+</blockquote>
+<p>cookie作用于所有同源窗口；sessionStorage只作用于当前窗口；localStorage作用于所有同源页面</p>
+<h3 id="7-lt-script-gt-lt-script-async-gt-lt-script-defer-gt-的区别"><a href="#7-lt-script-gt-lt-script-async-gt-lt-script-defer-gt-的区别" class="headerlink" title="7.&lt; script &gt;, &lt; script async &gt;, &lt; script defer &gt;的区别"></a>7.&lt; script &gt;, &lt; script async &gt;, &lt; script defer &gt;的区别</h3><blockquote>
+<p>script</p>
+</blockquote>
+<p>浏览器会根据 &lt; script &gt;在页面中出现的顺序依次进行解析，阻塞后面网页的呈现。</p>
+<blockquote>
+<p>script async</p>
+</blockquote>
+<p>表示立即下载脚本，下载完就解析执行，不会影响其他操作的执行，比如其他资源的下载。不能确定多个异步加载的脚本文件的执行顺序。通常用于不改变页面结构的CDN文件等。</p>
+<blockquote>
+<p>script defer</p>
+</blockquote>
+<p>表示立即下载脚本，但延迟到文档完全被解析和页面显示之后(onload之前)再执行。HTML5要求多个延迟加载的脚本文件按顺序执行，但是现实中不一定，所以最好只包含一个延迟脚本。</p>
+<h3 id="8-为什么把css的link放在头部，把js的script放在body之前"><a href="#8-为什么把css的link放在头部，把js的script放在body之前" class="headerlink" title="8.为什么把css的link放在头部，把js的script放在body之前"></a>8.为什么把css的link放在头部，把js的script放在body之前</h3><p>浏览器解析一个文档是按照 <strong>从上到下单线程</strong> 的方式解析的，浏览器加载一个网站时的步骤：1.拿到HTML网页；2.开始解析HTML；3.解析器遇到link标签，会并行下载资源，不会停止对当前文档的处理； 4.解析器遇到script标签，浏览器请求脚本文件，此时会停止解析页面上的其他HTML；5. 下载解析执行完脚本文件，解析器继续解析剩下的HTML文档。</p>
+<p>把link放头部，先加载解析样式文件，之后解析并呈现body中元素的时候可以避免页面混乱；把script放底部，这样脚本文件就不会阻塞页面内容的呈现，而且如果脚本中有操作dom结构也不会出现错误。</p>
+<h3 id="9-浏览器内核"><a href="#9-浏览器内核" class="headerlink" title="9.浏览器内核"></a>9.浏览器内核</h3><p>浏览器内核又叫浏览器渲染引擎，负责解释网页语法并渲染页面。</p>
+<ul>
+<li>IE: Trident</li>
+<li>Firefox: Gecko</li>
+<li>Chrome: Webkit Blink</li>
+<li>Safari: webkit</li>
+<li>Opera: Blink</li>
+</ul>
+<h3 id="10-rem和em"><a href="#10-rem和em" class="headerlink" title="10.rem和em"></a>10.rem和em</h3><blockquote>
+<p>rem</p>
+</blockquote>
+<p>rem是指以HTML页面的根元素html的字体大小为基准，设置其他元素的字体大小。具体大小是根元素字体大小*rem值</p>
+<blockquote>
+<p>em</p>
+</blockquote>
+<p>当使用em单位时，以父元素的字体大小为基准。具体大小是父元素字体大小*em值</p>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/2017/07/24/hello-world/" rel="next" title="hexo 基本命令">
+    下一篇：hexo 基本命令
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>
