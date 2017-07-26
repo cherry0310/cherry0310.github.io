@@ -3,8 +3,290 @@
   
     
     <entry>
+      <title><![CDATA[css面试问题（三）]]></title>
+      <url>/2017/07/26/css-question-3/</url>
+      <content type="html"><![CDATA[<h3 id="1-link和-import的区别"><a href="#1-link和-import的区别" class="headerlink" title="1.link和@import的区别"></a>1.link和@import的区别</h3><p>link属于HTML标签，而@import完全是CSS提供的一种方式。 link标签除了可以加载CSS外，还可以做很多其它的事情，比如定义RSS，定义rel连接属性等，@import就只能加载CSS了。</p>
+<ul>
+<li><p>加载顺序的区别<br>当一个页面被加载的时候，link引用的CSS会同时被加载，而@import引用的CSS会等到页面全部被下载完再被加载</p>
+</li>
+<li><p>兼容性的区别<br>由于@import 是CSS2.1提出的所以老的浏览器不支持，@import只有在IE5以上的才能识别，而link标签无此问题</p>
+<a id="more"></a>
+</li>
+</ul>
+<h3 id="2-CSS-Hack"><a href="#2-CSS-Hack" class="headerlink" title="2.CSS Hack"></a>2.CSS Hack</h3><p>针对不同浏览器编写的CSS代码。</p>
+<blockquote>
+<p>条件注释法</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if IE]&gt;</span></div><div class="line">这段文字只在IE浏览器显示</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>类内属性前缀法</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*background:blue;</div><div class="line">_color:#ff0; / For IE6 and earlier */</div></pre></td></tr></table></figure>
+<blockquote>
+<p>选择器前缀法</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#090</span>;&#125; <span class="comment">/* For IE6 and earlier */</span></div></pre></td></tr></table></figure>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+            <tag> css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[css面试问题（二）]]></title>
+      <url>/2017/07/26/css-question-2/</url>
+      <content type="html"><![CDATA[<h3 id="1-可伸缩矢量图形SVG"><a href="#1-可伸缩矢量图形SVG" class="headerlink" title="1.可伸缩矢量图形SVG"></a>1.可伸缩矢量图形SVG</h3><p>SVG(Scalable Vector Graphics)可伸缩矢量图形，是一种用来描述二维矢量图形的XML语言；在放大或缩小图像尺寸的时候，画质不会受损。flash是基于二进制的。</p>
+<p>SVG文件以.svg作为后缀，HTML页面引入svg，通过object或iframe或embed。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;svg version=&quot;1.1&quot;</div><div class="line">     baseProfile=&quot;full&quot;</div><div class="line">     width=&quot;300&quot; height=&quot;200&quot;</div><div class="line">     xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;</div><div class="line">  &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;red&quot; /&gt;</div><div class="line">  &lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;green&quot; /&gt;</div><div class="line">  &lt;text x=&quot;150&quot; y=&quot;125&quot; font-size=&quot;60&quot; text-anchor=&quot;middle&quot; fill=&quot;white&quot;&gt;SVG&lt;/text&gt;</div><div class="line">&lt;/svg&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">object</span> <span class="attr">data</span>=<span class="string">"image.svg"</span> <span class="attr">type</span>=<span class="string">"image/svg+xml"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"image.svg"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="2-使用CSS预处理器的优缺点"><a href="#2-使用CSS预处理器的优缺点" class="headerlink" title="2.使用CSS预处理器的优缺点"></a>2.使用CSS预处理器的优缺点</h3><p>预处理器定义了一种新的编程语言，最终生成的目标文件是CSS文件。常见的预处理语言有Sass/Less/Stylus/Swithch CSS/CSS Cacheer/DT CSS</p>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>-编码时无需考虑浏览器兼容性<br>-修改一处代码可以达到全局变化<br>-可以使用嵌套、变量、混合、函数等方便的功能</p>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<p>-依靠预处理器进行任何更新或修改，调试比较困难</p>
+<h3 id="3-css选择器的优先级"><a href="#3-css选择器的优先级" class="headerlink" title="3.css选择器的优先级"></a>3.css选择器的优先级</h3><blockquote>
+<p>样式文件的优先级（由低到高）</p>
+</blockquote>
+<p>-浏览器默认样式<br>-开发人员编写的样式（外部&lt;嵌入&lt;内嵌）<br>-!important注明的样式<br><strong>就近原则</strong>如果两条规则有相同的源和权重，那么后者覆盖前者</p>
+<blockquote>
+<p>计算选择器权重的规则</p>
+</blockquote>
+<p>+1 元素、伪元素（如::before）<br>+10 属性(如[type=”text”])、类、伪类(如:link或:hover，否定伪类不算)<br>+100 id<br>+1000 内嵌样式</p>
+<h3 id="4-如何筛选匹配一个CSS规则的元素"><a href="#4-如何筛选匹配一个CSS规则的元素" class="headerlink" title="4.如何筛选匹配一个CSS规则的元素"></a>4.如何筛选匹配一个CSS规则的元素</h3><p>浏览器解析选择器的时候，是<strong>从右向左</strong>解析的。最右侧的选择器叫key，从key开始先产生一个元素集合，然后判断集合中的元素是否满足向左一项的选择器，如果不满足，就把元素从集合中删除；一直检查完最左侧的选择器，此时还在元素集合中的元素就是满足CSS规则的元素。</p>
+<p>为什么从右向左匹配：因为效率高，查找元素的父元素或兄弟元素比查找一个元素的子元素要简单</p>
+<h3 id="5-描述伪元素以及它们的作用"><a href="#5-描述伪元素以及它们的作用" class="headerlink" title="5.描述伪元素以及它们的作用"></a>5.描述伪元素以及它们的作用</h3><blockquote>
+<p>定义</p>
+</blockquote>
+<p>伪元素添加到选择器，为元素的某些部分设置样式。</p>
+<blockquote>
+<p>常用伪元素</p>
+</blockquote>
+<p><strong>::before</strong>    创建了一个伪元素作为匹配元素的第一个子元素，通常通过设置content属性来添加修饰的内容；默认是inline元素<br><strong>::after</strong>        与before类似，但它创建的元素作为匹配元素的最后一个子元素；<br><strong>::first-letter</strong>    作用于一个块的第一行的第一个字母；<br><strong>::first-line</strong>    作用于一个元素的第一行 (text-transform/margin-left/text-indent不起作用)；<br><strong>::selection</strong>        作用于一个文档中被用户强调的部分（如鼠标选中）；</p>
+<h3 id="6-解释盒模型"><a href="#6-解释盒模型" class="headerlink" title="6.解释盒模型"></a>6.解释盒模型</h3><blockquote>
+<p>盒模型</p>
+</blockquote>
+<p>所有的HTML元素都可以看做盒子，盒模型是指包围在一个HTML元素外围的盒子，包括实际内容content+padding+border+margin。</p>
+<blockquote>
+<p>box-sizing属性</p>
+</blockquote>
+<p><strong>content-box</strong>（默认值）——标准盒模型。元素CSS设置的宽度只是元素实际内容的宽度，不包括padding/border/margin；</p>
+<p><strong>border-box</strong>——当文档处于怪异模式时IE使用的盒模型。元素CSS设置的宽度包含实际内容宽度+padding+border</p>
+<h3 id="7-inline-block和inline-block的区别"><a href="#7-inline-block和inline-block的区别" class="headerlink" title="7.inline,block和inline-block的区别"></a>7.inline,block和inline-block的区别</h3><blockquote>
+<p>inline</p>
+</blockquote>
+<p>-不独占一行，相邻元素排在一行，直到排不下换行，行尾元素拆成两部分<br>-不可设置宽高<br>-margin、padding只在水平方向有效</p>
+<blockquote>
+<p>block</p>
+</blockquote>
+<p>-独占一行，宽度默认填满父元素宽度<br>-可设置宽高<br>-margin、padding有效</p>
+<blockquote>
+<p>inline-block</p>
+</blockquote>
+<p>-不独占一行，相邻元素排在一行，直到排不下换行，行尾元素整体移到第二行<br>-可设置宽高<br>-margin、padding有效</p>
+<h3 id="8-定位static-relative-absolute-fixed的区别"><a href="#8-定位static-relative-absolute-fixed的区别" class="headerlink" title="8.定位static/relative/absolute/fixed的区别"></a>8.定位static/relative/absolute/fixed的区别</h3><p>一个定位的元素是指它的position的值是relative/absolute/fixed。而top/left/bottom/left属性是针对定位属性的。</p>
+<blockquote>
+<p> static静态定位</p>
+</blockquote>
+<p>默认的取值，元素表现为正常行为，布局在文档流的当前位置；<br>top/left/bottom/left/z-index均无效</p>
+<blockquote>
+<p>relative相对定位</p>
+</blockquote>
+<p>如果只是设置relative就好像没有定位一样，通过设置top/left/bottom/left使元素针对<strong>自身原本位置</strong>进行偏移；z-index设置层叠等级；<br>相对定位的元素不会影响任何它周围的static元素，例如把relative元素向下50px，那么它可能覆盖下方的static元素；<br>当对象定位到浏览器以外，浏览器显示滚动条</p>
+<blockquote>
+<p>absolute绝对定位</p>
+</blockquote>
+<p>元素从文档流中脱离，（正常文档流中好像不存在这个元素一样）会根据<strong>其最接近的已定位祖先元素</strong>来进行定位。设置top/left/bottom/left/z-index；<br>当对象定位到浏览器以外，浏览器显示滚动条</p>
+<blockquote>
+<p>fixed固定定位</p>
+</blockquote>
+<p>固定元素独立于页面上的任何元素，总是针对<strong>body元素</strong>进行绝对定位；当滚动条滚动时，元素一直在屏幕上的固定位置；<br>当对象定位到浏览器以外，浏览器不会显示滚动条</p>
+<h3 id="9-flex布局"><a href="#9-flex布局" class="headerlink" title="9.flex布局"></a>9.flex布局</h3><p>使用弹性盒子的意义是在任何尺寸的屏幕上改变其和其子元素的尺寸填充可用空间。弹性空间包括主轴和侧轴。<br>设置display:flex或display:inline-flex使一个元素成为flex container，此时它的子元素自动成为flex item，并且子元素的float/clear/vertical-align都会失效。</p>
+<h4 id="（1）弹性容器属性"><a href="#（1）弹性容器属性" class="headerlink" title="（1）弹性容器属性"></a>（1）弹性容器属性</h4><blockquote>
+<p>flex-direction: 决定主轴的方向</p>
+</blockquote>
+<p>row | row-reverse | column | column-reverse</p>
+<blockquote>
+<p>flex-wrap: 项目默认排在一条主轴线上，当一条轴线摆不下时是否换行</p>
+</blockquote>
+<p>nowrap | wrap | wrap-reverse（不换行 | 换行 | 换行且第一行在下方）</p>
+<blockquote>
+<p>flex-flow: 是flex-direction和flex-wrap的简写</p>
+</blockquote>
+<p>默认值 row nowrap</p>
+<blockquote>
+<p>justify-content：决定项目在主轴的对齐方式</p>
+</blockquote>
+<p>flex-start | flex-end | center | space-between | space-around（最后一个是指item两边的间隔相等，所以item之间距离是item与边框之间距离的2倍）</p>
+<blockquote>
+<p>align-items：决定项目在侧轴上的对齐方式</p>
+</blockquote>
+<p>flex-start | flex-end | center | baseline | stretch（baseline是指项目第一行文字的基线对齐，stretch是指当项目高度未指定时占满容器高度）</p>
+<blockquote>
+<p>align-content：定义多根轴线的对齐方式</p>
+</blockquote>
+<p>flex-start | flex-end | center | space-between | space-around | stretch（stretch是指轴线占满整个侧轴）</p>
+<h4 id="（2）弹性项目属性"><a href="#（2）弹性项目属性" class="headerlink" title="（2）弹性项目属性"></a>（2）弹性项目属性</h4><blockquote>
+<p>order：定义item的排列顺序，取整数值</p>
+</blockquote>
+<p>默认是0，数值越大越靠后，可以是负数</p>
+<blockquote>
+<p>align-self：定义某个item自己在侧轴上的对齐方式</p>
+</blockquote>
+<p>auto | flex-start | flex-end | center | baseline | stretch，它会覆盖容器align-items</p>
+<blockquote>
+<p>flex-grow：定义item的放大比例；0</p>
+</blockquote>
+<p>默认为0，即使有剩余空间也不放大，为2的元素占据的剩余空间是为1的元素的两倍</p>
+<blockquote>
+<p>flex-shrink：定义item的缩小比例；1</p>
+</blockquote>
+<p>默认为1，空间不足时该项目缩小，若items的这个属性都为1，当空间不足时，大家按等比例缩小，属性为0的item不缩小</p>
+<blockquote>
+<p>flex-basis：定义在分配多余空间之前item占据的主轴空间</p>
+</blockquote>
+<p>默认为auto，即项目本来大小</p>
+<blockquote>
+<p>flex：是flex-grow flex-shrink flex-basis的缩写</p>
+</blockquote>
+<p>默认值0 1 auto</p>
+<h3 id="10-自适应布局和响应式布局的区别"><a href="#10-自适应布局和响应式布局的区别" class="headerlink" title="10.自适应布局和响应式布局的区别"></a>10.自适应布局和响应式布局的区别</h3><p>都是为了解决页面在不同屏幕设备上的显示问题。</p>
+<blockquote>
+<p>自适应布局</p>
+</blockquote>
+<p>目的是在不同大小的设备上显示<strong>同样的网页</strong>，会根据屏幕宽度调整内容大小，但不改变布局</p>
+<p>利用CSS的媒体查询、js操作HTML元素来适应移动设备；有可能会针对移动端用户减去内容和功能；可能在服务器上通过判断设备，进行了内容优化，把优化过的网页传给终端；</p>
+<p>通常只针对几种断点进行优化(1280px,800px,640px,320px)，断点之间的自动过渡比较少。</p>
+<blockquote>
+<p>响应式布局</p>
+</blockquote>
+<p>倾向于<strong>改变元素的外观布局</strong>，不改变内容</p>
+<p>利用CSS的媒体查询、流体布局(fluid grid)、可自适应的图片资源等来实现，一般都是通过HTML和CSS实现的</p>
+<p>在两个断点之间，页面依然随窗口大小自动缩放，直到到达断点改变样式</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+            <tag> css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[css面试问题（一）]]></title>
+      <url>/2017/07/26/css-question-1/</url>
+      <content type="html"><![CDATA[<h3 id="1-css中类和id的区别"><a href="#1-css中类和id的区别" class="headerlink" title="1.css中类和id的区别"></a>1.css中类和id的区别</h3><blockquote>
+<p>id</p>
+</blockquote>
+<p>id是唯一的，每个html元素只能有一个id，同一个id值在一个页面中只能出现一次；权重100；id还可以配合URL中的hash作为锚点使用，便于定位。</p>
+<blockquote>
+<p>class</p>
+</blockquote>
+<p>class不唯一，每个html元素可以有多个类，多个元素可以拥有相同的类；权重10。<br><a id="more"></a></p>
+<h3 id="2-resetting-css和normalizing-css的区别"><a href="#2-resetting-css和normalizing-css的区别" class="headerlink" title="2.resetting css和normalizing css的区别"></a>2.resetting css和normalizing css的区别</h3><blockquote>
+<p>reset</p>
+</blockquote>
+<p>reset目的是移除所有内置的浏览器样式</p>
+<blockquote>
+<p>normalize</p>
+</blockquote>
+<p>normalize目的是使元素样式跨浏览器一致。<br>-保留有用的默认值，而不是覆盖一切样式；<br>-纠正了一些超出reset.css范围的常见错误；<br>-不会扰乱开发者工具，reset使工具中显示大量的继承链；<br>-有更完整的文档</p>
+<h3 id="3-浮动的工作原理"><a href="#3-浮动的工作原理" class="headerlink" title="3.浮动的工作原理"></a>3.浮动的工作原理</h3><p>浮动一开始出现的意义是实现文字环绕图片效果。<br>使一个元素脱离正常的文档流，被安放在容器的左端或右端，其他文本或行内元素可以环绕它。float会把元素块级化。<br>取值： left | right | none | inherit<br>带来的副作用是使得父元素高度变为0<br><strong>注意：</strong> js中修改float值用 ele.style.cssFloat || ele.style.styleFloat(IE8-)</p>
+<h3 id="4-清除浮动的方法"><a href="#4-清除浮动的方法" class="headerlink" title="4.清除浮动的方法"></a>4.清除浮动的方法</h3><blockquote>
+<p>利用clear属性</p>
+</blockquote>
+<p>1.浮动元素后面紧跟带clear属性的空元素，会将浮动元素重新引入文档流；<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">”clear:both”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>2.不添加空元素，直接在浮动元素后面的有内容元素上添加clear:both样式；<br>3.给父元素添加某个类(常命名为clearfix)<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line">    <span class="attribute">display</span>:block;</div><div class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">clear</span>:both;</div><div class="line">    <span class="attribute">visibility</span>:hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>触发父元素形成BFC</p>
+</blockquote>
+<p>1.浮动元素的父级元素添加 {overflow: auto | hidden | scroll} IE下父元素还要添加zoom:1（zoom触发父元素haslayout）<br>2.父元素设置浮动</p>
+<h3 id="5-描述z-index以及层叠上下文的形成"><a href="#5-描述z-index以及层叠上下文的形成" class="headerlink" title="5.描述z-index以及层叠上下文的形成"></a>5.描述z-index以及层叠上下文的形成</h3><blockquote>
+<p>z-index</p>
+</blockquote>
+<p>z-index 属性指定了一个元素及其子元素的 z-order。 当元素之间重叠的时候，z-order 决定哪一个元素覆盖在其余元素的上方显示。 通常来说 z-index 较大的元素会覆盖较小的一个。<br>z-index:auto元素不会创建一个新的本地层叠上下文；z-index:integer是指生成的元素在当前层叠上下文中的堆叠层级，同时创建一个堆叠层级为0的本地堆叠上下文。</p>
+<blockquote>
+<p>层叠上下文</p>
+</blockquote>
+<p>层叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。<br>层叠上下文的形成：z-index 值不为 “auto”的 绝对/相对定位；opacity属性值小于 1 的元素等。<br><strong>注意：</strong> 子元素的z-index值只在父级层叠上下文中有意义。AB同级，A的z-index是1，B是2，A的子元素a的z-index是5，那么B仍在a的上层。</p>
+<h3 id="6-BFC块级格式上下文"><a href="#6-BFC块级格式上下文" class="headerlink" title="6.BFC块级格式上下文"></a>6.BFC块级格式上下文</h3><p>Block Formatting Context是web页面可视化渲染的一部分，提供了一个独立布局的环境，每个BFC都遵循一套相同的布局规则。<br>创建方式：<br>-根元素<br>-绝对定位或固定定位<br>-浮动<br>-display值为inline-block或table-cell或table-caption或flex的元素<br>-块元素<br>-overflow</p>
+<h3 id="7-解释CSS-Sprites"><a href="#7-解释CSS-Sprites" class="headerlink" title="7.解释CSS Sprites"></a>7.解释CSS Sprites</h3><blockquote>
+<p>原理</p>
+</blockquote>
+<p>将网页中一些背景图片合并到一张大的图片，利用background-image、background-repeat、background-position、手机端background-size来定位到要显示的背景图片；</p>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>-减少http请求，提高性能；<br>-减少图片总的字节数；<br>-解决命名困扰；<br>-更换风格方便</p>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<p>-合并图片<br>-如果某张背景图片发生变化，整张图可能要重做，维护性差</p>
+<h3 id="8-渐进增强和优雅降级"><a href="#8-渐进增强和优雅降级" class="headerlink" title="8.渐进增强和优雅降级"></a>8.渐进增强和优雅降级</h3><blockquote>
+<p>渐进增强 progressive enhancement</p>
+</blockquote>
+<p>先针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
+<blockquote>
+<p>优雅降级 graceful degradation</p>
+</blockquote>
+<p>一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+<blockquote>
+<p>区别</p>
+</blockquote>
+<p>a. 优雅降级是从复杂的现状开始，并试图减少用户体验的供给<br>b. 渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要<br>c. 降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带</p>
+<h3 id="9-隐藏元素的方式"><a href="#9-隐藏元素的方式" class="headerlink" title="9.隐藏元素的方式"></a>9.隐藏元素的方式</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">display: none; //元素彻底从文档流中消失，不会保留其物理空间</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">visibility: hidden; //元素只是视觉上不可见，仍为其保留物理空间</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">width</span>: 0; <span class="selector-tag">height</span>: 0;</div></pre></td></tr></table></figure>
+<h3 id="10-媒体查询"><a href="#10-媒体查询" class="headerlink" title="10.媒体查询"></a>10.媒体查询</h3><p>媒体查询由一个可选的<strong>媒体类型</strong>和零个或多个利用媒体功能<strong>限制样式表范围的表达式</strong>组成。</p>
+<blockquote>
+<p>媒体类型</p>
+</blockquote>
+<p>all | screen | print | handheld | tv<br>使用not或only时必须指明媒体类型，否则是可选的，默认是all</p>
+<blockquote>
+<p>逻辑操作符</p>
+</blockquote>
+<ul>
+<li><p>and把多个媒体属性组合成一条媒体查询，每个属性都为真时，结果才为真</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@media tv and (max-width: 400px) and (orientation: landscape)&#123;.test&#123;//...&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>逗号相当于or，只要有一个属性为真，结果就为真</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@media (max-width: 700px), handheld and (orientation: landscape)&#123;.test&#123;//..&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>not 对一条媒体查询的语句取反</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> not screen and (color), print and (color)</div></pre></td></tr></table></figure>
+</li>
+<li><p>only 仅在媒体查询成功的情况下应用指定样式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"@media only screen and (max-width:70px)"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+            <tag> css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[html 面试问题]]></title>
-      <url>/2017/07/24/htmlQuestion/</url>
+      <url>/2017/07/24/html-question/</url>
       <content type="html"><![CDATA[<h3 id="1-doctype的作用"><a href="#1-doctype的作用" class="headerlink" title="1.doctype的作用"></a>1.doctype的作用</h3><p>文档类型声明，声明文档是用哪个版本的html编写的，告诉浏览器用哪种规则集来解析文档中的标记。</p>
 <h3 id="2-标准模式、混杂模式、准标准模式的区别"><a href="#2-标准模式、混杂模式、准标准模式的区别" class="headerlink" title="2.标准模式、混杂模式、准标准模式的区别"></a>2.标准模式、混杂模式、准标准模式的区别</h3><blockquote>
 <p>区别</p>
@@ -100,7 +382,7 @@
         
         <tags>
             
-            <tag> 面试准备 </tag>
+            <tag> 面试 </tag>
             
             <tag> html </tag>
             
@@ -110,7 +392,7 @@
     
     <entry>
       <title><![CDATA[hexo 基本命令]]></title>
-      <url>/2017/07/24/hello-world/</url>
+      <url>/2017/07/24/hexo-command/</url>
       <content type="html"><![CDATA[<ul>
 <li>Hexo官网—— <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a></li>
 <li>Hexo官方文档—— <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a></li>
@@ -148,7 +430,7 @@
     
     <entry>
       <title><![CDATA[git 基本命令]]></title>
-      <url>/2017/07/24/gitCommand/</url>
+      <url>/2017/07/24/git-command/</url>
       <content type="html"><![CDATA[<h5 id="克隆github上的项目到本地"><a href="#克隆github上的项目到本地" class="headerlink" title="克隆github上的项目到本地"></a>克隆github上的项目到本地</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/cherry0310/xxx.git</div></pre></td></tr></table></figure>
 <h5 id="新建develop分支"><a href="#新建develop分支" class="headerlink" title="新建develop分支"></a>新建develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -b develop</div></pre></td></tr></table></figure>
 <h5 id="删除develop分支"><a href="#删除develop分支" class="headerlink" title="删除develop分支"></a>删除develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d develop</div></pre></td></tr></table></figure>

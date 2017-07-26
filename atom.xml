@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-25T10:22:45.000Z</updated>
+  <updated>2017-07-26T08:56:40.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,83 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>css面试问题（三）</title>
+    <link href="http://yoursite.com/2017/07/26/css-question-3/"/>
+    <id>http://yoursite.com/2017/07/26/css-question-3/</id>
+    <published>2017-07-26T08:49:15.000Z</published>
+    <updated>2017-07-26T08:56:40.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-link和-import的区别&quot;&gt;&lt;a href=&quot;#1-link和-import的区别&quot; class=&quot;headerlink&quot; title=&quot;1.link和@import的区别&quot;&gt;&lt;/a&gt;1.link和@import的区别&lt;/h3&gt;&lt;p&gt;link属于HTML标签，而@import完全是CSS提供的一种方式。 link标签除了可以加载CSS外，还可以做很多其它的事情，比如定义RSS，定义rel连接属性等，@import就只能加载CSS了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;加载顺序的区别&lt;br&gt;当一个页面被加载的时候，link引用的CSS会同时被加载，而@import引用的CSS会等到页面全部被下载完再被加载&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;兼容性的区别&lt;br&gt;由于@import 是CSS2.1提出的所以老的浏览器不支持，@import只有在IE5以上的才能识别，而link标签无此问题&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css面试问题（二）</title>
+    <link href="http://yoursite.com/2017/07/26/css-question-2/"/>
+    <id>http://yoursite.com/2017/07/26/css-question-2/</id>
+    <published>2017-07-26T06:35:29.000Z</published>
+    <updated>2017-07-26T08:48:18.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-可伸缩矢量图形SVG&quot;&gt;&lt;a href=&quot;#1-可伸缩矢量图形SVG&quot; class=&quot;headerlink&quot; title=&quot;1.可伸缩矢量图形SVG&quot;&gt;&lt;/a&gt;1.可伸缩矢量图形SVG&lt;/h3&gt;&lt;p&gt;SVG(Scalable Vector Graphics)可伸缩矢量图形，是一种用来描述二维矢量图形的XML语言；在放大或缩小图像尺寸的时候，画质不会受损。flash是基于二进制的。&lt;/p&gt;
+&lt;p&gt;SVG文件以.svg作为后缀，HTML页面引入svg，通过object或iframe或embed。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css面试问题（一）</title>
+    <link href="http://yoursite.com/2017/07/26/css-question-1/"/>
+    <id>http://yoursite.com/2017/07/26/css-question-1/</id>
+    <published>2017-07-26T02:20:56.000Z</published>
+    <updated>2017-07-26T06:37:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-css中类和id的区别&quot;&gt;&lt;a href=&quot;#1-css中类和id的区别&quot; class=&quot;headerlink&quot; title=&quot;1.css中类和id的区别&quot;&gt;&lt;/a&gt;1.css中类和id的区别&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;id&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;id是唯一的，每个html元素只能有一个id，同一个id值在一个页面中只能出现一次；权重100；id还可以配合URL中的hash作为锚点使用，便于定位。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;class&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;class不唯一，每个html元素可以有多个类，多个元素可以拥有相同的类；权重10。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
     <title>html 面试问题</title>
-    <link href="http://yoursite.com/2017/07/24/htmlQuestion/"/>
-    <id>http://yoursite.com/2017/07/24/htmlQuestion/</id>
+    <link href="http://yoursite.com/2017/07/24/html-question/"/>
+    <id>http://yoursite.com/2017/07/24/html-question/</id>
     <published>2017-07-24T11:15:03.000Z</published>
-    <updated>2017-07-25T10:22:45.000Z</updated>
+    <updated>2017-07-26T02:23:43.000Z</updated>
     
     <summary type="html">
     
@@ -35,7 +107,7 @@
     </summary>
     
     
-      <category term="面试准备" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
       <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
@@ -43,8 +115,8 @@
   
   <entry>
     <title>hexo 基本命令</title>
-    <link href="http://yoursite.com/2017/07/24/hello-world/"/>
-    <id>http://yoursite.com/2017/07/24/hello-world/</id>
+    <link href="http://yoursite.com/2017/07/24/hexo-command/"/>
+    <id>http://yoursite.com/2017/07/24/hexo-command/</id>
     <published>2017-07-24T11:14:24.000Z</published>
     <updated>2017-07-24T11:14:24.000Z</updated>
     
@@ -69,8 +141,8 @@
   
   <entry>
     <title>git 基本命令</title>
-    <link href="http://yoursite.com/2017/07/24/gitCommand/"/>
-    <id>http://yoursite.com/2017/07/24/gitCommand/</id>
+    <link href="http://yoursite.com/2017/07/24/git-command/"/>
+    <id>http://yoursite.com/2017/07/24/git-command/</id>
     <published>2017-07-24T03:26:51.000Z</published>
     <updated>2017-07-24T11:14:16.000Z</updated>
     

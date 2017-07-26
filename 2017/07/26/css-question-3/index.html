@@ -7,13 +7,19 @@
 
     
 
-    <title>html | cherry的技术小窝</title>
+    <title>css面试问题（三） | cherry的技术小窝</title>
     <meta name="author" content="cherry">
+    
+    <meta name="description" content="1.link和@import的区别link属于HTML标签，而@import完全是CSS提供的一种方式。 link标签除了可以加载CSS外，还可以做很多其它的事情，比如定义RSS，定义rel连接属性等，@import就只能加载CSS了。
+
+加载顺序的区别当一个页面被加载的时候，link引用的CSS会同时被加载，而@import引用的CSS会等到页面全部被下载完再被加载
+
+兼容性的区别由于@import 是CSS2.1提出的所以老的浏览器不支持，@import只有在IE5以上的才能识别，而link标签无此问题">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="css面试问题（三）"/>
     <meta property="og:site_name" content="cherry的技术小窝"/>
 
     
@@ -199,30 +205,94 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper green">
-        <span class="breadcrumb">当前位置（标签）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
         
+            
 
         
-            <a class="breadcrumb" href="/tags/html/">html</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>css面试问题（三）</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="pink-link-context" datetime="2017-07-26T08:49:15.000Z"><a href="/2017/07/26/css-question-3/">2017-07-26</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
-            <a href="/2017/07/24/html-question/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-07-24T11:15:03.000Z">2017-07-24</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                html 面试问题
-            </a>
+            <a href="/tags/面试/" class="chip pink lighten-1">面试</a>
+        
+            <a href="/tags/css/" class="chip pink lighten-1">css</a>
         
     </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-link和-import的区别"><span class="section table-of-contents-text">1.link和@import的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-CSS-Hack"><span class="section table-of-contents-text">2.CSS Hack</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h3 id="1-link和-import的区别"><a href="#1-link和-import的区别" class="headerlink" title="1.link和@import的区别"></a>1.link和@import的区别</h3><p>link属于HTML标签，而@import完全是CSS提供的一种方式。 link标签除了可以加载CSS外，还可以做很多其它的事情，比如定义RSS，定义rel连接属性等，@import就只能加载CSS了。</p>
+<ul>
+<li><p>加载顺序的区别<br>当一个页面被加载的时候，link引用的CSS会同时被加载，而@import引用的CSS会等到页面全部被下载完再被加载</p>
+</li>
+<li><p>兼容性的区别<br>由于@import 是CSS2.1提出的所以老的浏览器不支持，@import只有在IE5以上的才能识别，而link标签无此问题</p>
+<a id="more"></a>
+</li>
+</ul>
+<h3 id="2-CSS-Hack"><a href="#2-CSS-Hack" class="headerlink" title="2.CSS Hack"></a>2.CSS Hack</h3><p>针对不同浏览器编写的CSS代码。</p>
+<blockquote>
+<p>条件注释法</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if IE]&gt;</span></div><div class="line">这段文字只在IE浏览器显示</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>类内属性前缀法</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*background:blue;</div><div class="line">_color:#ff0; / For IE6 and earlier */</div></pre></td></tr></table></figure>
+<blockquote>
+<p>选择器前缀法</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#090</span>;&#125; <span class="comment">/* For IE6 and earlier */</span></div></pre></td></tr></table></figure>
+                
+
+
+<p class="pink-link-context">
+    <a href="/2017/07/26/css-question-2/" rel="next" title="css面试问题（二）">
+    下一篇：css面试问题（二）
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>

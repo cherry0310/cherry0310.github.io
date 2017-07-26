@@ -7,13 +7,22 @@
 
     
 
-    <title>html | cherry的技术小窝</title>
+    <title>css面试问题（一） | cherry的技术小窝</title>
     <meta name="author" content="cherry">
+    
+    <meta name="description" content="1.css中类和id的区别
+id
+
+id是唯一的，每个html元素只能有一个id，同一个id值在一个页面中只能出现一次；权重100；id还可以配合URL中的hash作为锚点使用，便于定位。
+
+class
+
+class不唯一，每个html元素可以有多个类，多个元素可以拥有相同的类；权重10。">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="css面试问题（一）"/>
     <meta property="og:site_name" content="cherry的技术小窝"/>
 
     
@@ -199,30 +208,164 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper green">
-        <span class="breadcrumb">当前位置（标签）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
         
+            
 
         
-            <a class="breadcrumb" href="/tags/html/">html</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>css面试问题（一）</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="pink-link-context" datetime="2017-07-26T02:20:56.000Z"><a href="/2017/07/26/css-question-1/">2017-07-26</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
-            <a href="/2017/07/24/html-question/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-07-24T11:15:03.000Z">2017-07-24</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                html 面试问题
-            </a>
+            <a href="/tags/面试/" class="chip pink lighten-1">面试</a>
+        
+            <a href="/tags/css/" class="chip pink lighten-1">css</a>
         
     </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-css中类和id的区别"><span class="section table-of-contents-text">1.css中类和id的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-resetting-css和normalizing-css的区别"><span class="section table-of-contents-text">2.resetting css和normalizing css的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-浮动的工作原理"><span class="section table-of-contents-text">3.浮动的工作原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-清除浮动的方法"><span class="section table-of-contents-text">4.清除浮动的方法</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-描述z-index以及层叠上下文的形成"><span class="section table-of-contents-text">5.描述z-index以及层叠上下文的形成</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-BFC块级格式上下文"><span class="section table-of-contents-text">6.BFC块级格式上下文</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7-解释CSS-Sprites"><span class="section table-of-contents-text">7.解释CSS Sprites</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#8-渐进增强和优雅降级"><span class="section table-of-contents-text">8.渐进增强和优雅降级</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#9-隐藏元素的方式"><span class="section table-of-contents-text">9.隐藏元素的方式</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#10-媒体查询"><span class="section table-of-contents-text">10.媒体查询</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h3 id="1-css中类和id的区别"><a href="#1-css中类和id的区别" class="headerlink" title="1.css中类和id的区别"></a>1.css中类和id的区别</h3><blockquote>
+<p>id</p>
+</blockquote>
+<p>id是唯一的，每个html元素只能有一个id，同一个id值在一个页面中只能出现一次；权重100；id还可以配合URL中的hash作为锚点使用，便于定位。</p>
+<blockquote>
+<p>class</p>
+</blockquote>
+<p>class不唯一，每个html元素可以有多个类，多个元素可以拥有相同的类；权重10。<br><a id="more"></a></p>
+<h3 id="2-resetting-css和normalizing-css的区别"><a href="#2-resetting-css和normalizing-css的区别" class="headerlink" title="2.resetting css和normalizing css的区别"></a>2.resetting css和normalizing css的区别</h3><blockquote>
+<p>reset</p>
+</blockquote>
+<p>reset目的是移除所有内置的浏览器样式</p>
+<blockquote>
+<p>normalize</p>
+</blockquote>
+<p>normalize目的是使元素样式跨浏览器一致。<br>-保留有用的默认值，而不是覆盖一切样式；<br>-纠正了一些超出reset.css范围的常见错误；<br>-不会扰乱开发者工具，reset使工具中显示大量的继承链；<br>-有更完整的文档</p>
+<h3 id="3-浮动的工作原理"><a href="#3-浮动的工作原理" class="headerlink" title="3.浮动的工作原理"></a>3.浮动的工作原理</h3><p>浮动一开始出现的意义是实现文字环绕图片效果。<br>使一个元素脱离正常的文档流，被安放在容器的左端或右端，其他文本或行内元素可以环绕它。float会把元素块级化。<br>取值： left | right | none | inherit<br>带来的副作用是使得父元素高度变为0<br><strong>注意：</strong> js中修改float值用 ele.style.cssFloat || ele.style.styleFloat(IE8-)</p>
+<h3 id="4-清除浮动的方法"><a href="#4-清除浮动的方法" class="headerlink" title="4.清除浮动的方法"></a>4.清除浮动的方法</h3><blockquote>
+<p>利用clear属性</p>
+</blockquote>
+<p>1.浮动元素后面紧跟带clear属性的空元素，会将浮动元素重新引入文档流；<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">”clear:both”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>2.不添加空元素，直接在浮动元素后面的有内容元素上添加clear:both样式；<br>3.给父元素添加某个类(常命名为clearfix)<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line">    <span class="attribute">display</span>:block;</div><div class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</div><div class="line">    <span class="attribute">clear</span>:both;</div><div class="line">    <span class="attribute">visibility</span>:hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>触发父元素形成BFC</p>
+</blockquote>
+<p>1.浮动元素的父级元素添加 {overflow: auto | hidden | scroll} IE下父元素还要添加zoom:1（zoom触发父元素haslayout）<br>2.父元素设置浮动</p>
+<h3 id="5-描述z-index以及层叠上下文的形成"><a href="#5-描述z-index以及层叠上下文的形成" class="headerlink" title="5.描述z-index以及层叠上下文的形成"></a>5.描述z-index以及层叠上下文的形成</h3><blockquote>
+<p>z-index</p>
+</blockquote>
+<p>z-index 属性指定了一个元素及其子元素的 z-order。 当元素之间重叠的时候，z-order 决定哪一个元素覆盖在其余元素的上方显示。 通常来说 z-index 较大的元素会覆盖较小的一个。<br>z-index:auto元素不会创建一个新的本地层叠上下文；z-index:integer是指生成的元素在当前层叠上下文中的堆叠层级，同时创建一个堆叠层级为0的本地堆叠上下文。</p>
+<blockquote>
+<p>层叠上下文</p>
+</blockquote>
+<p>层叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。<br>层叠上下文的形成：z-index 值不为 “auto”的 绝对/相对定位；opacity属性值小于 1 的元素等。<br><strong>注意：</strong> 子元素的z-index值只在父级层叠上下文中有意义。AB同级，A的z-index是1，B是2，A的子元素a的z-index是5，那么B仍在a的上层。</p>
+<h3 id="6-BFC块级格式上下文"><a href="#6-BFC块级格式上下文" class="headerlink" title="6.BFC块级格式上下文"></a>6.BFC块级格式上下文</h3><p>Block Formatting Context是web页面可视化渲染的一部分，提供了一个独立布局的环境，每个BFC都遵循一套相同的布局规则。<br>创建方式：<br>-根元素<br>-绝对定位或固定定位<br>-浮动<br>-display值为inline-block或table-cell或table-caption或flex的元素<br>-块元素<br>-overflow</p>
+<h3 id="7-解释CSS-Sprites"><a href="#7-解释CSS-Sprites" class="headerlink" title="7.解释CSS Sprites"></a>7.解释CSS Sprites</h3><blockquote>
+<p>原理</p>
+</blockquote>
+<p>将网页中一些背景图片合并到一张大的图片，利用background-image、background-repeat、background-position、手机端background-size来定位到要显示的背景图片；</p>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>-减少http请求，提高性能；<br>-减少图片总的字节数；<br>-解决命名困扰；<br>-更换风格方便</p>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<p>-合并图片<br>-如果某张背景图片发生变化，整张图可能要重做，维护性差</p>
+<h3 id="8-渐进增强和优雅降级"><a href="#8-渐进增强和优雅降级" class="headerlink" title="8.渐进增强和优雅降级"></a>8.渐进增强和优雅降级</h3><blockquote>
+<p>渐进增强 progressive enhancement</p>
+</blockquote>
+<p>先针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
+<blockquote>
+<p>优雅降级 graceful degradation</p>
+</blockquote>
+<p>一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+<blockquote>
+<p>区别</p>
+</blockquote>
+<p>a. 优雅降级是从复杂的现状开始，并试图减少用户体验的供给<br>b. 渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要<br>c. 降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带</p>
+<h3 id="9-隐藏元素的方式"><a href="#9-隐藏元素的方式" class="headerlink" title="9.隐藏元素的方式"></a>9.隐藏元素的方式</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">display: none; //元素彻底从文档流中消失，不会保留其物理空间</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">visibility: hidden; //元素只是视觉上不可见，仍为其保留物理空间</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">width</span>: 0; <span class="selector-tag">height</span>: 0;</div></pre></td></tr></table></figure>
+<h3 id="10-媒体查询"><a href="#10-媒体查询" class="headerlink" title="10.媒体查询"></a>10.媒体查询</h3><p>媒体查询由一个可选的<strong>媒体类型</strong>和零个或多个利用媒体功能<strong>限制样式表范围的表达式</strong>组成。</p>
+<blockquote>
+<p>媒体类型</p>
+</blockquote>
+<p>all | screen | print | handheld | tv<br>使用not或only时必须指明媒体类型，否则是可选的，默认是all</p>
+<blockquote>
+<p>逻辑操作符</p>
+</blockquote>
+<ul>
+<li><p>and把多个媒体属性组合成一条媒体查询，每个属性都为真时，结果才为真</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@media tv and (max-width: 400px) and (orientation: landscape)&#123;.test&#123;//...&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>逗号相当于or，只要有一个属性为真，结果就为真</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@media (max-width: 700px), handheld and (orientation: landscape)&#123;.test&#123;//..&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>not 对一条媒体查询的语句取反</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> not screen and (color), print and (color)</div></pre></td></tr></table></figure>
+</li>
+<li><p>only 仅在媒体查询成功的情况下应用指定样式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"@media only screen and (max-width:70px)"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+                
+<p class="pink-link-context">
+    <a href="/2017/07/26/css-question-2/" rel="next" title="css面试问题（二）">
+    上一篇：css面试问题（二）
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/2017/07/24/html-question/" rel="next" title="html 面试问题">
+    下一篇：html 面试问题
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>
