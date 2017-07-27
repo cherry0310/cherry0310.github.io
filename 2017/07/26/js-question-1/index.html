@@ -7,18 +7,15 @@
 
     
 
-    <title>git 基本命令 | cherry的技术小窝</title>
+    <title>javascript面试问题（一） | cherry的技术小窝</title>
     <meta name="author" content="cherry">
     
-    <meta name="description" content="克隆github上的项目到本地1git clone https://github.com/cherry0310/xxx.git
-新建develop分支1git checkout -b develop
-删除develop分支1git branch -d develop
-切换到develop分支1git">
+    <meta name="description" content="1.解释一下事件委托事件委托是指利用事件冒泡，将子元素的事件处理程序绑定到祖先元素上，当任意子元素发生事件时，这个事件处理程序就会被触发。一般通过e.target.name/e.target.id等来判断发生事件的具体是哪个子元素。">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="git 基本命令"/>
+    <meta property="og:title" content="javascript面试问题（一）"/>
     <meta property="og:site_name" content="cherry的技术小窝"/>
 
     
@@ -209,10 +206,6 @@
         <span class="breadcrumb">当前位置（分类目录）</span>
         
             
-    
-    
-    <a class="breadcrumb" href="/categories/命令清单/">命令清单</a><a class="breadcrumb" href="/categories/命令清单/git/">git</a>
-
 
         
 
@@ -228,12 +221,12 @@
             <div class="article-title">
                 
     
-        <h1>git 基本命令</h1>
+        <h1>javascript面试问题（一）</h1>
     
 
 
             </div>
-            <time class="pink-link-context" datetime="2017-07-24T03:26:51.000Z"><a href="/2017/07/24/git-command/">2017-07-24</a></time>
+            <time class="pink-link-context" datetime="2017-07-26T09:10:08.000Z"><a href="/2017/07/26/js-question-1/">2017-07-26</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -243,49 +236,118 @@
             
     <div class="tags-row">
         
-            <a href="/tags/git/" class="chip pink lighten-1">git</a>
+            <a href="/tags/面试/" class="chip pink lighten-1">面试</a>
         
-            <a href="/tags/命令清单/" class="chip pink lighten-1">命令清单</a>
+            <a href="/tags/javascript/" class="chip pink lighten-1">javascript</a>
         
     </div>
 
 
             <div class="toc pink-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#克隆github上的项目到本地"><span class="section table-of-contents-text">克隆github上的项目到本地</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#新建develop分支"><span class="section table-of-contents-text">新建develop分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#删除develop分支"><span class="section table-of-contents-text">删除develop分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#切换到develop分支"><span class="section table-of-contents-text">切换到develop分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#查看本地分支"><span class="section table-of-contents-text">查看本地分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#查看所有分支"><span class="section table-of-contents-text">查看所有分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#添加修改"><span class="section table-of-contents-text">添加修改</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#提交修改"><span class="section table-of-contents-text">提交修改</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#推送到远程"><span class="section table-of-contents-text">推送到远程</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#将本地develop分支关联到远程develop分支"><span class="section table-of-contents-text">将本地develop分支关联到远程develop分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#查看版本之间的差异"><span class="section table-of-contents-text">查看版本之间的差异</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#将develop分支合并到master"><span class="section table-of-contents-text">将develop分支合并到master</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#删除本地分支"><span class="section table-of-contents-text">删除本地分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#删除远程分支"><span class="section table-of-contents-text">删除远程分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#查看提交历史"><span class="section table-of-contents-text">查看提交历史</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#回退到某个版本"><span class="section table-of-contents-text">回退到某个版本</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#回退后强制提交"><span class="section table-of-contents-text">回退后强制提交</span></a></li></ol>
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-解释一下事件委托"><span class="section table-of-contents-text">1.解释一下事件委托</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-javascript中this的工作原理"><span class="section table-of-contents-text">2.javascript中this的工作原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-AMD和CommonJS"><span class="section table-of-contents-text">3.AMD和CommonJS</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-null-undefined-和-undeclared变量之间的区别"><span class="section table-of-contents-text">4.null, undefined 和 undeclared变量之间的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-什么是闭包，以及你怎么使用闭包的"><span class="section table-of-contents-text">5.什么是闭包，以及你怎么使用闭包的</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-native-objects和host-objects的区别"><span class="section table-of-contents-text">6.native objects和host objects的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7-new操作符执行的操作"><span class="section table-of-contents-text">7.new操作符执行的操作</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#8-call和apply的区别"><span class="section table-of-contents-text">8.call和apply的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#9-串联两个数组的方法"><span class="section table-of-contents-text">9.串联两个数组的方法</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#10-特征检测-特征推断-和使用用户代理字符串的区别"><span class="section table-of-contents-text">10.特征检测, 特征推断, 和使用用户代理字符串的区别</span></a></li></ol>
 </div>
 
 
             <div class="entry pink-link-context">
-                <h5 id="克隆github上的项目到本地"><a href="#克隆github上的项目到本地" class="headerlink" title="克隆github上的项目到本地"></a>克隆github上的项目到本地</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/cherry0310/xxx.git</div></pre></td></tr></table></figure>
-<h5 id="新建develop分支"><a href="#新建develop分支" class="headerlink" title="新建develop分支"></a>新建develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -b develop</div></pre></td></tr></table></figure>
-<h5 id="删除develop分支"><a href="#删除develop分支" class="headerlink" title="删除develop分支"></a>删除develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d develop</div></pre></td></tr></table></figure>
-<h5 id="切换到develop分支"><a href="#切换到develop分支" class="headerlink" title="切换到develop分支"></a>切换到develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout develop</div></pre></td></tr></table></figure>
-<h5 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch</div></pre></td></tr></table></figure>
-<h5 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a>查看所有分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -a</div></pre></td></tr></table></figure>
-<h5 id="添加修改"><a href="#添加修改" class="headerlink" title="添加修改"></a>添加修改</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add .</div><div class="line">git add -A</div></pre></td></tr></table></figure>
-<h5 id="提交修改"><a href="#提交修改" class="headerlink" title="提交修改"></a>提交修改</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -m <span class="string">'修改原因'</span></div></pre></td></tr></table></figure>
-<h5 id="推送到远程"><a href="#推送到远程" class="headerlink" title="推送到远程"></a>推送到远程</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push</div></pre></td></tr></table></figure>
-<h5 id="将本地develop分支关联到远程develop分支"><a href="#将本地develop分支关联到远程develop分支" class="headerlink" title="将本地develop分支关联到远程develop分支"></a>将本地develop分支关联到远程develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push --<span class="built_in">set</span>-upstream origin develop</div></pre></td></tr></table></figure>
-<h5 id="查看版本之间的差异"><a href="#查看版本之间的差异" class="headerlink" title="查看版本之间的差异"></a>查看版本之间的差异</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git diff</div></pre></td></tr></table></figure>
-<h5 id="将develop分支合并到master"><a href="#将develop分支合并到master" class="headerlink" title="将develop分支合并到master"></a>将develop分支合并到master</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git merge --no-ff develop</div></pre></td></tr></table></figure>
+                <h3 id="1-解释一下事件委托"><a href="#1-解释一下事件委托" class="headerlink" title="1.解释一下事件委托"></a>1.解释一下事件委托</h3><p><strong>事件委托</strong>是指利用事件冒泡，将子元素的事件处理程序绑定到祖先元素上，当任意子元素发生事件时，这个事件处理程序就会被触发。一般通过e.target.name/e.target.id等来判断发生事件的具体是哪个子元素。<br><a id="more"></a></p>
+<blockquote>
+<p>优点</p>
+</blockquote>
 <ul>
-<li>不使用–no-ff，git执行快进式合并，master直接指向develop分支</li>
-<li>使用–no-ff，git执行正常合并，在master支上生成新节点</li>
+<li><p>减少添加事件监听所需引用的DOM，减少事件监听的内存占用，提高性能</p>
+</li>
+<li><p>更容易解绑</p>
+</li>
+<li><p>对于动态添加的子元素，不必再额外绑定事件</p>
+</li>
 </ul>
-<h5 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d develop</div></pre></td></tr></table></figure>
-<h5 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin --delete develop</div></pre></td></tr></table></figure>
-<h5 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span></div></pre></td></tr></table></figure>
-<h5 id="回退到某个版本"><a href="#回退到某个版本" class="headerlink" title="回退到某个版本"></a>回退到某个版本</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reset --hard f17a150b38d332015ab5911c5820dee385c420db</div></pre></td></tr></table></figure>
-<h5 id="回退后强制提交"><a href="#回退后强制提交" class="headerlink" title="回退后强制提交"></a>回退后强制提交</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push -f</div></pre></td></tr></table></figure>
+<p><strong>事件</strong>是指浏览器窗口发生的一些特定的交互瞬间</p>
+<p><strong>事件流</strong>是指从页面上接收事件的顺序</p>
+<blockquote>
+<p>事件流的阶段</p>
+</blockquote>
+<p><strong>捕获阶段：</strong> 事件最开始由最不具体的节点接收，最后传播到最具体的节点；</p>
+<p><strong>处于目标阶段</strong></p>
+<p><strong>冒泡阶段：</strong> 事件最开始由最具体（文档嵌套层次最深）的节点接收，然后逐级向上传播到较不具体的节点。</p>
+<h3 id="2-javascript中this的工作原理"><a href="#2-javascript中this的工作原理" class="headerlink" title="2.javascript中this的工作原理"></a>2.javascript中this的工作原理</h3><p>this是在运行时基于函数的执行环境绑定的，所以每次调用函数时this值可能是不一样的。</p>
+<p>-全局环境中调用函数，this指向window<br>-当函数作为某个对象的方法调用的时候，this指向该对象<br>-当this出现在构造函数中，this指向new出来的新对象<br>-func.call(o,arg1,arg2,arg3)中this指向o<br>-func.apply(o,[arg1,arg2,arg3])中this指向o<br>-let f = func.bind(o) 绑定之后，f内部的this始终指向o<br>-事件处理程序中，this永远等于currentTarget<br>-在html属性onclick中，this指向当前的DOM元素</p>
+<h3 id="3-AMD和CommonJS"><a href="#3-AMD和CommonJS" class="headerlink" title="3.AMD和CommonJS"></a>3.AMD和CommonJS</h3><p>AMD(asynchronous module definition)和CommonJS</p>
+<blockquote>
+<p>相同点</p>
+</blockquote>
+<p>AMD和CommonJS是两种通用的模块规范API。模块就是一组实现特定功能的方法。</p>
+<blockquote>
+<p>区别</p>
+</blockquote>
+<p><strong>CommonJS</strong>使用同步加载，适合服务器端，使用exports暴露模块方法，使用require([module])加载模块，实现这个规范的有nodejs</p>
+<p><strong>AMD异步模块定义</strong>，它使用异步方式加载模块，模块的加载不影响后面语句的执行，所有依赖这个模块的语句都封装在回调函数中，当模块加载完成之后执行回调函数；适合浏览器端；require([module],callback).实现这个规范的有requirejs.</p>
+<h3 id="4-null-undefined-和-undeclared变量之间的区别"><a href="#4-null-undefined-和-undeclared变量之间的区别" class="headerlink" title="4.null, undefined 和 undeclared变量之间的区别"></a>4.null, undefined 和 undeclared变量之间的区别</h3><blockquote>
+<p>declared和undeclared<br>没有用var来声明的变量被称为是undeclared。当执行赋值代码后，它会成为一个全局变量。在严格模式下，这个变量将不存在。两者的区别有:</p>
+</blockquote>
+<p>1.已声明的变量被限制在执行上下文中，而未声明的变量永远是全局变量；<br>2.已声明的变量会在任何代码执行前被创建出来（创建时值为undefined），未声明的变量不会存在直到运行到赋值代码处；</p>
+<blockquote>
+<p>undefined</p>
+</blockquote>
+<p>undefined是一种基本类型，当变量不存在或者已经声明但是还未被赋值的时候，变量的类型是undefined<br>判断方法：typeof variable == ‘undefined’</p>
+<blockquote>
+<p>null</p>
+</blockquote>
+<p>变量被赋予的值是空值<br>判断方法：variable == null（typeof的结果是object）</p>
+<h3 id="5-什么是闭包，以及你怎么使用闭包的"><a href="#5-什么是闭包，以及你怎么使用闭包的" class="headerlink" title="5.什么是闭包，以及你怎么使用闭包的"></a>5.什么是闭包，以及你怎么使用闭包的</h3><p>闭包是指<strong>有权访问另一个函数内部变量的函数</strong>。闭包由两个部分组成：函数和创建该函数的环境，环境由创建该闭包时作用域中存在的任何局部变量组成。</p>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>-闭包允许将函数与其所操作的某些数据关联起来；<br>-闭包可以模拟私有变量和私有方法，提供一个公共函数来访问；<br>-有利于限制对代码的访问，提供了管理全局命名空间的能力；<br>-读取函数的内部变量，使这些变量的值始终保存在内存中。</p>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<p>变量常驻内存，会增大内存使用量</p>
+<h3 id="6-native-objects和host-objects的区别"><a href="#6-native-objects和host-objects的区别" class="headerlink" title="6.native objects和host objects的区别"></a>6.native objects和host objects的区别</h3><blockquote>
+<p>native objects本地对象</p>
+</blockquote>
+<p>是指<strong>由ECMAScript实现的对象</strong>，它的语义是由ECMAScript规范定义的；本地对象可以是内置的，也可以是ECMAScript程序执行时构建的<br>例如：Object/String/Array/Number/Math等及它们的方法</p>
+<blockquote>
+<p>host objects主机对象</p>
+</blockquote>
+<p>完成ECMAScript执行的<strong>宿主环境提供的对象</strong>，不同环境下的主机对象是不一样的<br>例如：浏览器下的window/document/XMLHttpRequest/setTimeout/getElementById,nodejs下的NodeList对象</p>
+<h3 id="7-new操作符执行的操作"><a href="#7-new操作符执行的操作" class="headerlink" title="7.new操作符执行的操作"></a>7.new操作符执行的操作</h3><p>new 用来创建一个用户自定义对象类型的实例或者具有构造函数的内置对象类型的实例，它经过如下步骤：</p>
+<ul>
+<li>1.创建一个新的对象x</li>
+<li>2.将对象的__proto__指向构造函数的原型</li>
+<li>3.执行构造函数，同时this指向新对象</li>
+<li>4.若构造函数有返回一个对象，那么new的结果就是这个对象；（一般构造函数不会返回值）否则new的结果就是1中创建的对象x</li>
+</ul>
+<h3 id="8-call和apply的区别"><a href="#8-call和apply的区别" class="headerlink" title="8.call和apply的区别"></a>8.call和apply的区别</h3><p>call和apply都可以指定函数执行时的this值</p>
+<p>call的第一个参数是指定的this值，其他参数是列出的函数参数</p>
+<p>apply的第一个参数是指定的this值，第二个参数是函数参数组成的数组</p>
+<h3 id="9-串联两个数组的方法"><a href="#9-串联两个数组的方法" class="headerlink" title="9.串联两个数组的方法"></a>9.串联两个数组的方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"><span class="keyword">let</span> arr2 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</div><div class="line"></div><div class="line"><span class="keyword">let</span> arr = arr1.concat(arr2)</div><div class="line"><span class="keyword">let</span> arr = [...arr1, ...arr2]</div><div class="line"><span class="built_in">Array</span>.prototype.unshift.apply(arr2, arr1)</div><div class="line"><span class="comment">//concat方法、扩展语法、unshift方法</span></div></pre></td></tr></table></figure>
+<h3 id="10-特征检测-特征推断-和使用用户代理字符串的区别"><a href="#10-特征检测-特征推断-和使用用户代理字符串的区别" class="headerlink" title="10.特征检测, 特征推断, 和使用用户代理字符串的区别"></a>10.特征检测, 特征推断, 和使用用户代理字符串的区别</h3><blockquote>
+<p>特征检测feature detection</p>
+</blockquote>
+<p>检测某个特性是否存在<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</div><div class="line">    <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>特征推断feature inference</p>
+</blockquote>
+<p>作出某种假设，因为特征A存在，所以特征B也存在<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.getElementsByTagName) &#123;</div><div class="line">    element = <span class="built_in">document</span>.getElementById(id);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>使用用户代理字符串</p>
+</blockquote>
+<p>用户代理字符串包含了浏览器的相关信息，每次HTTP请求中，响应头中都会包含用户代理字符串，并且可以通过navigator.userAgent来访问<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (navigator.userAgent.indexOf(<span class="string">"MSIE 7"</span>) &gt; <span class="number">-1</span>)&#123;</div><div class="line">    <span class="comment">//do something</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
                 
 <p class="pink-link-context">
-    <a href="/2017/07/24/hexo-command/" rel="next" title="hexo 基本命令">
-    上一篇：hexo 基本命令
+    <a href="/2017/07/27/js-question-2/" rel="next" title="javascript面试问题（二）">
+    上一篇：javascript面试问题（二）
   </a>
 </p>
 
 
+
+<p class="pink-link-context">
+    <a href="/2017/07/26/css-question-3/" rel="next" title="css面试问题（三）">
+    下一篇：css面试问题（三）
+  </a>
+</p>
 
 
             </div>

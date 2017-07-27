@@ -3,6 +3,185 @@
   
     
     <entry>
+      <title><![CDATA[javascript面试问题（二）]]></title>
+      <url>/2017/07/27/js-question-2/</url>
+      <content type="html"><![CDATA[<h3 id="1-ajax原理"><a href="#1-ajax原理" class="headerlink" title="1.ajax原理"></a>1.ajax原理</h3><blockquote>
+<p>代码实现</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ajax</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.method = obj.method || <span class="string">'get'</span></div><div class="line">    <span class="keyword">this</span>.url = obj.url || <span class="string">''</span></div><div class="line">    <span class="keyword">this</span>.async = obj.async || <span class="literal">true</span></div><div class="line">    <span class="keyword">this</span>.data = obj.data || <span class="string">''</span></div><div class="line">    <span class="keyword">this</span>.callback = obj.callback || <span class="function"><span class="params">()</span>=&gt;</span>&#123;&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Ajax.prototype.send = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">    xhr.onreadystatechange = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">        <span class="keyword">if</span>(xhr.readystate == <span class="number">4</span>)&#123;</div><div class="line">            callback(xhr.responseText)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(method == <span class="string">'get'</span>)&#123;</div><div class="line">        xhr.open(<span class="string">'GET'</span>, url, <span class="keyword">async</span>)</div><div class="line">        xhr.send(<span class="literal">null</span>)</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(method == <span class="string">'post'</span>)&#123;</div><div class="line">        xhr.open(<span class="string">'POST'</span>, url, <span class="keyword">async</span>)</div><div class="line">        xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>)</div><div class="line">        xhr.send(data)</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'无法识别方法'</span>)</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> ajax = <span class="keyword">new</span> Ajax(&#123;</div><div class="line">    <span class="attr">method</span>: <span class="string">'post'</span>,</div><div class="line">    <span class="attr">url</span>: <span class="string">'http://localhost:3000'</span>,</div><div class="line">    <span class="attr">async</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">data</span>: <span class="built_in">JSON</span>.stringify(data),</div><div class="line">    <span class="attr">callback</span>: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(res)</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line">ajax.send()</div></pre></td></tr></table></figure>
+<blockquote>
+<p>XMLHttpRequest对象的属性</p>
+</blockquote>
+<ul>
+<li><strong>onreadystatechange</strong> 每次readystate改变触发的事件处理程序</li>
+<li><strong>readyState</strong> 对象状态值<br>-0表示未初始化，还没调用open方法<br>-1表示初始化，已调用open未调用send方法<br>-2表示发送数据，已调用send，但当前状态和http头未知<br>-3表示接收数据，已接收部分数据<br>-4表示完成，数据接收完毕</li>
+<li><strong>status</strong> 从服务器返回的状态码，如200，404</li>
+<li><strong>statusText</strong> 伴随status的描述文字，如OK</li>
+<li><strong>responseText</strong> 从服务器返回的数据的字符串形式</li>
+</ul>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>-异步获取数据，不打断用户的操作<br>-前后端分离</p>
+<h3 id="2-JSONP的工作原理"><a href="#2-JSONP的工作原理" class="headerlink" title="2.JSONP的工作原理"></a>2.JSONP的工作原理</h3><blockquote>
+<p>出现原因</p>
+</blockquote>
+<p>浏览器发送ajax请求的时候只能请求同源地址上的数据，不能跨域请求；但是html页面上的script标签可以请求跨域的javascript文件。注意JSONP只能用于get操作。</p>
+<blockquote>
+<p>工作原理</p>
+</blockquote>
+<p>1.创建一个方法来处理从API处返回的数据<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myCallbackFunction</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.在页面上加一个script标签，来加载API，同时在url后面添加callback参数<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://other.com/api.json?callback=myCallbackFunction"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>3.服务器上对应的API会返回数据，但不是单纯的JSON，而是包裹着回调函数的JSON</p>
+<p>4.script标签拿到返回的数据后会立即执行，即调用myCallbackFunction，在控制台打印出data</p>
+<h3 id="3-解释hoisting（提升）"><a href="#3-解释hoisting（提升）" class="headerlink" title="3.解释hoisting（提升）"></a>3.解释hoisting（提升）</h3><p>提升是指js中的声明会被解析器提升到所在作用域的顶部。</p>
+<blockquote>
+<p>变量声明提升</p>
+</blockquote>
+<p>var temp = 1;这句语句会被拆成var temp; （被提升到当前作用于的顶部）以及temp = 1;（初始化保留在原位置）。</p>
+<blockquote>
+<p>函数声明提升</p>
+</blockquote>
+<p>变量只是提升声明、不提升初始化，但是函数会将声明和定义一起提升到作用域顶部。<strong>注意：</strong> 函数提升优先级比变量提升高，不会被变量声明覆盖，但会被变量赋值覆盖</p>
+<p>下面两段代码，后者是前者提升之后的实际顺序<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">containingFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> hoisted = <span class="string">"I'm the variable"</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">hoisted</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"I'm the function"</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> hoisted(); <span class="comment">// results in a TypeError</span></div><div class="line">&#125;</div><div class="line">containingFunction()</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">containingFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">hoisted</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"I'm the function"</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> hoisted;</div><div class="line">    hoisted = <span class="string">"I'm the variable"</span>;</div><div class="line">    <span class="keyword">return</span> hoisted();</div><div class="line">&#125;</div><div class="line">containingFunction()</div></pre></td></tr></table></figure>
+<h3 id="4-同源策略"><a href="#4-同源策略" class="headerlink" title="4.同源策略"></a>4.同源策略</h3><p>同源策略限制了一个域上的脚本只可以与同源的资源交互，同源策略可以有效防止来自其他源的恶意攻击。<br>同源是指<strong>协议(http vs https)、域名、端口号都相等</strong>，只要任一个值不同，就认为是不同源。</p>
+<h3 id="5-”use-strict”的优缺点是什么"><a href="#5-”use-strict”的优缺点是什么" class="headerlink" title="5.”use strict”的优缺点是什么"></a>5.”use strict”的优缺点是什么</h3><blockquote>
+<p>定义</p>
+</blockquote>
+<p>把”use strict”放在代码或方法的顶部，js将会以严格模式来执行，严格模式会抛出更多的错误以及禁止一些特性，目的是为了让你的代码更健壮、更精确、可读性更好。</p>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>-捕获常见的代码错误，抛出异常；<br>-它会防止一些不安全的行为发生，或者当发生的时候抛出异常；<br>-它会禁用一些令人困惑或考虑不周的特性。</p>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<p>-当混用严格模式和正常(normal)模式的时候会有一些问题；<br>-严格模式的限制很多，有些开发人员希望使用语言的所有特性</p>
+<h3 id="6-可变对象和不可变对象的区别"><a href="#6-可变对象和不可变对象的区别" class="headerlink" title="6.可变对象和不可变对象的区别"></a>6.可变对象和不可变对象的区别</h3><blockquote>
+<p>不可变对象</p>
+</blockquote>
+<p>不可变是指一旦初始化一个对象，你就不能再修改它的property了。例如字符串数值，它永远创造一个新的实例，然后存到一个变量里，字符串上的任何操作都不会影响它的初始值。<br>var str = “abc”; //当你创建abc字符串的时候，分配了内存给abc，这个内存是不会变的，直到被垃圾回收。</p>
+<p>-优点：防止对对象的意外修改；内存分配固定，不需要扩充<br>-缺点：性能比较差，总是要创建新的实例</p>
+<blockquote>
+<p>可变对象</p>
+</blockquote>
+<p>比如数组。<br>var num = [1,2,3]; num[0] = “a”; console.log(num); //[“a”,2,3]</p>
+<h3 id="7-javascript中的事件循环、调用栈、任务队列"><a href="#7-javascript中的事件循环、调用栈、任务队列" class="headerlink" title="7.javascript中的事件循环、调用栈、任务队列"></a>7.javascript中的事件循环、调用栈、任务队列</h3>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[javascript面试问题（一）]]></title>
+      <url>/2017/07/26/js-question-1/</url>
+      <content type="html"><![CDATA[<h3 id="1-解释一下事件委托"><a href="#1-解释一下事件委托" class="headerlink" title="1.解释一下事件委托"></a>1.解释一下事件委托</h3><p><strong>事件委托</strong>是指利用事件冒泡，将子元素的事件处理程序绑定到祖先元素上，当任意子元素发生事件时，这个事件处理程序就会被触发。一般通过e.target.name/e.target.id等来判断发生事件的具体是哪个子元素。<br><a id="more"></a></p>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<ul>
+<li><p>减少添加事件监听所需引用的DOM，减少事件监听的内存占用，提高性能</p>
+</li>
+<li><p>更容易解绑</p>
+</li>
+<li><p>对于动态添加的子元素，不必再额外绑定事件</p>
+</li>
+</ul>
+<p><strong>事件</strong>是指浏览器窗口发生的一些特定的交互瞬间</p>
+<p><strong>事件流</strong>是指从页面上接收事件的顺序</p>
+<blockquote>
+<p>事件流的阶段</p>
+</blockquote>
+<p><strong>捕获阶段：</strong> 事件最开始由最不具体的节点接收，最后传播到最具体的节点；</p>
+<p><strong>处于目标阶段</strong></p>
+<p><strong>冒泡阶段：</strong> 事件最开始由最具体（文档嵌套层次最深）的节点接收，然后逐级向上传播到较不具体的节点。</p>
+<h3 id="2-javascript中this的工作原理"><a href="#2-javascript中this的工作原理" class="headerlink" title="2.javascript中this的工作原理"></a>2.javascript中this的工作原理</h3><p>this是在运行时基于函数的执行环境绑定的，所以每次调用函数时this值可能是不一样的。</p>
+<p>-全局环境中调用函数，this指向window<br>-当函数作为某个对象的方法调用的时候，this指向该对象<br>-当this出现在构造函数中，this指向new出来的新对象<br>-func.call(o,arg1,arg2,arg3)中this指向o<br>-func.apply(o,[arg1,arg2,arg3])中this指向o<br>-let f = func.bind(o) 绑定之后，f内部的this始终指向o<br>-事件处理程序中，this永远等于currentTarget<br>-在html属性onclick中，this指向当前的DOM元素</p>
+<h3 id="3-AMD和CommonJS"><a href="#3-AMD和CommonJS" class="headerlink" title="3.AMD和CommonJS"></a>3.AMD和CommonJS</h3><p>AMD(asynchronous module definition)和CommonJS</p>
+<blockquote>
+<p>相同点</p>
+</blockquote>
+<p>AMD和CommonJS是两种通用的模块规范API。模块就是一组实现特定功能的方法。</p>
+<blockquote>
+<p>区别</p>
+</blockquote>
+<p><strong>CommonJS</strong>使用同步加载，适合服务器端，使用exports暴露模块方法，使用require([module])加载模块，实现这个规范的有nodejs</p>
+<p><strong>AMD异步模块定义</strong>，它使用异步方式加载模块，模块的加载不影响后面语句的执行，所有依赖这个模块的语句都封装在回调函数中，当模块加载完成之后执行回调函数；适合浏览器端；require([module],callback).实现这个规范的有requirejs.</p>
+<h3 id="4-null-undefined-和-undeclared变量之间的区别"><a href="#4-null-undefined-和-undeclared变量之间的区别" class="headerlink" title="4.null, undefined 和 undeclared变量之间的区别"></a>4.null, undefined 和 undeclared变量之间的区别</h3><blockquote>
+<p>declared和undeclared<br>没有用var来声明的变量被称为是undeclared。当执行赋值代码后，它会成为一个全局变量。在严格模式下，这个变量将不存在。两者的区别有:</p>
+</blockquote>
+<p>1.已声明的变量被限制在执行上下文中，而未声明的变量永远是全局变量；<br>2.已声明的变量会在任何代码执行前被创建出来（创建时值为undefined），未声明的变量不会存在直到运行到赋值代码处；</p>
+<blockquote>
+<p>undefined</p>
+</blockquote>
+<p>undefined是一种基本类型，当变量不存在或者已经声明但是还未被赋值的时候，变量的类型是undefined<br>判断方法：typeof variable == ‘undefined’</p>
+<blockquote>
+<p>null</p>
+</blockquote>
+<p>变量被赋予的值是空值<br>判断方法：variable == null（typeof的结果是object）</p>
+<h3 id="5-什么是闭包，以及你怎么使用闭包的"><a href="#5-什么是闭包，以及你怎么使用闭包的" class="headerlink" title="5.什么是闭包，以及你怎么使用闭包的"></a>5.什么是闭包，以及你怎么使用闭包的</h3><p>闭包是指<strong>有权访问另一个函数内部变量的函数</strong>。闭包由两个部分组成：函数和创建该函数的环境，环境由创建该闭包时作用域中存在的任何局部变量组成。</p>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>-闭包允许将函数与其所操作的某些数据关联起来；<br>-闭包可以模拟私有变量和私有方法，提供一个公共函数来访问；<br>-有利于限制对代码的访问，提供了管理全局命名空间的能力；<br>-读取函数的内部变量，使这些变量的值始终保存在内存中。</p>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<p>变量常驻内存，会增大内存使用量</p>
+<h3 id="6-native-objects和host-objects的区别"><a href="#6-native-objects和host-objects的区别" class="headerlink" title="6.native objects和host objects的区别"></a>6.native objects和host objects的区别</h3><blockquote>
+<p>native objects本地对象</p>
+</blockquote>
+<p>是指<strong>由ECMAScript实现的对象</strong>，它的语义是由ECMAScript规范定义的；本地对象可以是内置的，也可以是ECMAScript程序执行时构建的<br>例如：Object/String/Array/Number/Math等及它们的方法</p>
+<blockquote>
+<p>host objects主机对象</p>
+</blockquote>
+<p>完成ECMAScript执行的<strong>宿主环境提供的对象</strong>，不同环境下的主机对象是不一样的<br>例如：浏览器下的window/document/XMLHttpRequest/setTimeout/getElementById,nodejs下的NodeList对象</p>
+<h3 id="7-new操作符执行的操作"><a href="#7-new操作符执行的操作" class="headerlink" title="7.new操作符执行的操作"></a>7.new操作符执行的操作</h3><p>new 用来创建一个用户自定义对象类型的实例或者具有构造函数的内置对象类型的实例，它经过如下步骤：</p>
+<ul>
+<li>1.创建一个新的对象x</li>
+<li>2.将对象的__proto__指向构造函数的原型</li>
+<li>3.执行构造函数，同时this指向新对象</li>
+<li>4.若构造函数有返回一个对象，那么new的结果就是这个对象；（一般构造函数不会返回值）否则new的结果就是1中创建的对象x</li>
+</ul>
+<h3 id="8-call和apply的区别"><a href="#8-call和apply的区别" class="headerlink" title="8.call和apply的区别"></a>8.call和apply的区别</h3><p>call和apply都可以指定函数执行时的this值</p>
+<p>call的第一个参数是指定的this值，其他参数是列出的函数参数</p>
+<p>apply的第一个参数是指定的this值，第二个参数是函数参数组成的数组</p>
+<h3 id="9-串联两个数组的方法"><a href="#9-串联两个数组的方法" class="headerlink" title="9.串联两个数组的方法"></a>9.串联两个数组的方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"><span class="keyword">let</span> arr2 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</div><div class="line"></div><div class="line"><span class="keyword">let</span> arr = arr1.concat(arr2)</div><div class="line"><span class="keyword">let</span> arr = [...arr1, ...arr2]</div><div class="line"><span class="built_in">Array</span>.prototype.unshift.apply(arr2, arr1)</div><div class="line"><span class="comment">//concat方法、扩展语法、unshift方法</span></div></pre></td></tr></table></figure>
+<h3 id="10-特征检测-特征推断-和使用用户代理字符串的区别"><a href="#10-特征检测-特征推断-和使用用户代理字符串的区别" class="headerlink" title="10.特征检测, 特征推断, 和使用用户代理字符串的区别"></a>10.特征检测, 特征推断, 和使用用户代理字符串的区别</h3><blockquote>
+<p>特征检测feature detection</p>
+</blockquote>
+<p>检测某个特性是否存在<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</div><div class="line">    <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>特征推断feature inference</p>
+</blockquote>
+<p>作出某种假设，因为特征A存在，所以特征B也存在<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.getElementsByTagName) &#123;</div><div class="line">    element = <span class="built_in">document</span>.getElementById(id);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>使用用户代理字符串</p>
+</blockquote>
+<p>用户代理字符串包含了浏览器的相关信息，每次HTTP请求中，响应头中都会包含用户代理字符串，并且可以通过navigator.userAgent来访问<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (navigator.userAgent.indexOf(<span class="string">"MSIE 7"</span>) &gt; <span class="number">-1</span>)&#123;</div><div class="line">    <span class="comment">//do something</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[css面试问题（三）]]></title>
       <url>/2017/07/26/css-question-3/</url>
       <content type="html"><![CDATA[<h3 id="1-link和-import的区别"><a href="#1-link和-import的区别" class="headerlink" title="1.link和@import的区别"></a>1.link和@import的区别</h3><p>link属于HTML标签，而@import完全是CSS提供的一种方式。 link标签除了可以加载CSS外，还可以做很多其它的事情，比如定义RSS，定义rel连接属性等，@import就只能加载CSS了。</p>
@@ -287,14 +466,13 @@
     <entry>
       <title><![CDATA[html 面试问题]]></title>
       <url>/2017/07/24/html-question/</url>
-      <content type="html"><![CDATA[<h3 id="1-doctype的作用"><a href="#1-doctype的作用" class="headerlink" title="1.doctype的作用"></a>1.doctype的作用</h3><p>文档类型声明，声明文档是用哪个版本的html编写的，告诉浏览器用哪种规则集来解析文档中的标记。</p>
+      <content type="html"><![CDATA[<h3 id="1-doctype的作用"><a href="#1-doctype的作用" class="headerlink" title="1.doctype的作用"></a>1.doctype的作用</h3><p>文档类型声明，声明文档是用哪个版本的html编写的，告诉浏览器用哪种规则集来解析文档中的标记。<br><a id="more"></a></p>
 <h3 id="2-标准模式、混杂模式、准标准模式的区别"><a href="#2-标准模式、混杂模式、准标准模式的区别" class="headerlink" title="2.标准模式、混杂模式、准标准模式的区别"></a>2.标准模式、混杂模式、准标准模式的区别</h3><blockquote>
 <p>区别</p>
 </blockquote>
 <p><strong>标准模式：</strong> 浏览器几乎遵循最新标准来呈现网页</p>
 <p><strong>混杂模式：</strong> 页面以一种宽松的向后兼容的方式呈现</p>
 <p><strong>准标准模式：</strong> 几乎要符合标准模式，仍包含一部分混杂模式中的行为</p>
-<a id="more"></a>
 <blockquote>
 <p>触发方式</p>
 </blockquote>
@@ -449,6 +627,9 @@
 </ul>
 <h5 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d develop</div></pre></td></tr></table></figure>
 <h5 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin --delete develop</div></pre></td></tr></table></figure>
+<h5 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span></div></pre></td></tr></table></figure>
+<h5 id="回退到某个版本"><a href="#回退到某个版本" class="headerlink" title="回退到某个版本"></a>回退到某个版本</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reset --hard f17a150b38d332015ab5911c5820dee385c420db</div></pre></td></tr></table></figure>
+<h5 id="回退后强制提交"><a href="#回退后强制提交" class="headerlink" title="回退后强制提交"></a>回退后强制提交</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push -f</div></pre></td></tr></table></figure>
 ]]></content>
       
         <categories>

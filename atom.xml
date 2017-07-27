@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-26T08:56:40.000Z</updated>
+  <updated>2017-07-27T09:42:32.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript面试问题（二）</title>
+    <link href="http://yoursite.com/2017/07/27/js-question-2/"/>
+    <id>http://yoursite.com/2017/07/27/js-question-2/</id>
+    <published>2017-07-27T07:36:46.000Z</published>
+    <updated>2017-07-27T09:42:32.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-ajax原理&quot;&gt;&lt;a href=&quot;#1-ajax原理&quot; class=&quot;headerlink&quot; title=&quot;1.ajax原理&quot;&gt;&lt;/a&gt;1.ajax原理&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;代码实现&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure cl
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript面试问题（一）</title>
+    <link href="http://yoursite.com/2017/07/26/js-question-1/"/>
+    <id>http://yoursite.com/2017/07/26/js-question-1/</id>
+    <published>2017-07-26T09:10:08.000Z</published>
+    <updated>2017-07-27T07:46:30.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-解释一下事件委托&quot;&gt;&lt;a href=&quot;#1-解释一下事件委托&quot; class=&quot;headerlink&quot; title=&quot;1.解释一下事件委托&quot;&gt;&lt;/a&gt;1.解释一下事件委托&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;事件委托&lt;/strong&gt;是指利用事件冒泡，将子元素的事件处理程序绑定到祖先元素上，当任意子元素发生事件时，这个事件处理程序就会被触发。一般通过e.target.name/e.target.id等来判断发生事件的具体是哪个子元素。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>css面试问题（三）</title>
@@ -92,17 +135,11 @@
     <link href="http://yoursite.com/2017/07/24/html-question/"/>
     <id>http://yoursite.com/2017/07/24/html-question/</id>
     <published>2017-07-24T11:15:03.000Z</published>
-    <updated>2017-07-26T02:23:43.000Z</updated>
+    <updated>2017-07-27T07:47:03.000Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;1-doctype的作用&quot;&gt;&lt;a href=&quot;#1-doctype的作用&quot; class=&quot;headerlink&quot; title=&quot;1.doctype的作用&quot;&gt;&lt;/a&gt;1.doctype的作用&lt;/h3&gt;&lt;p&gt;文档类型声明，声明文档是用哪个版本的html编写的，告诉浏览器用哪种规则集来解析文档中的标记。&lt;/p&gt;
-&lt;h3 id=&quot;2-标准模式、混杂模式、准标准模式的区别&quot;&gt;&lt;a href=&quot;#2-标准模式、混杂模式、准标准模式的区别&quot; class=&quot;headerlink&quot; title=&quot;2.标准模式、混杂模式、准标准模式的区别&quot;&gt;&lt;/a&gt;2.标准模式、混杂模式、准标准模式的区别&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;区别&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;标准模式：&lt;/strong&gt; 浏览器几乎遵循最新标准来呈现网页&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;混杂模式：&lt;/strong&gt; 页面以一种宽松的向后兼容的方式呈现&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;准标准模式：&lt;/strong&gt; 几乎要符合标准模式，仍包含一部分混杂模式中的行为&lt;/p&gt;
+      &lt;h3 id=&quot;1-doctype的作用&quot;&gt;&lt;a href=&quot;#1-doctype的作用&quot; class=&quot;headerlink&quot; title=&quot;1.doctype的作用&quot;&gt;&lt;/a&gt;1.doctype的作用&lt;/h3&gt;&lt;p&gt;文档类型声明，声明文档是用哪个版本的html编写的，告诉浏览器用哪种规则集来解析文档中的标记。&lt;br&gt;
     
     </summary>
     
@@ -144,7 +181,7 @@
     <link href="http://yoursite.com/2017/07/24/git-command/"/>
     <id>http://yoursite.com/2017/07/24/git-command/</id>
     <published>2017-07-24T03:26:51.000Z</published>
-    <updated>2017-07-24T11:14:16.000Z</updated>
+    <updated>2017-07-27T02:13:13.000Z</updated>
     
     <summary type="html">
     

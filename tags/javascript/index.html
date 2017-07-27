@@ -7,18 +7,13 @@
 
     
 
-    <title>git 基本命令 | cherry的技术小窝</title>
+    <title>javascript | cherry的技术小窝</title>
     <meta name="author" content="cherry">
-    
-    <meta name="description" content="克隆github上的项目到本地1git clone https://github.com/cherry0310/xxx.git
-新建develop分支1git checkout -b develop
-删除develop分支1git branch -d develop
-切换到develop分支1git">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="git 基本命令"/>
+    
     <meta property="og:site_name" content="cherry的技术小窝"/>
 
     
@@ -204,99 +199,36 @@
 
     <main>
         <div class="container main-container">
-    <nav class="page-nav hide-on-small-only">
+    
+
+<nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper green">
-        <span class="breadcrumb">当前位置（分类目录）</span>
-        
-            
-    
-    
-    <a class="breadcrumb" href="/categories/命令清单/">命令清单</a><a class="breadcrumb" href="/categories/命令清单/git/">git</a>
-
-
+        <span class="breadcrumb">当前位置（标签）</span>
         
 
+        
+            <a class="breadcrumb" href="/tags/javascript/">javascript</a>
         
     </div>
 </nav>
 
-<article>
-    <div class="card">
-        <div class="card-content">
-            
-
-            <div class="article-title">
-                
-    
-        <h1>git 基本命令</h1>
-    
 
 
-            </div>
-            <time class="pink-link-context" datetime="2017-07-24T03:26:51.000Z"><a href="/2017/07/24/git-command/">2017-07-24</a></time>
-
-            <span id="busuanzi_container_page_pv" class="read-times-container">
-    <i class="fa fa-eye"></i>
-    <span id="busuanzi_value_page_pv"></span>
-</span>
-
-            
-    <div class="tags-row">
+    <div class="collection mt-0">
         
-            <a href="/tags/git/" class="chip pink lighten-1">git</a>
+            <a href="/2017/07/27/js-question-2/" class="collection-item grey-text text-darken-1">
+                <time datetime="2017-07-27T07:36:46.000Z">2017-07-27</time>
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                javascript面试问题（二）
+            </a>
         
-            <a href="/tags/命令清单/" class="chip pink lighten-1">命令清单</a>
+            <a href="/2017/07/26/js-question-1/" class="collection-item grey-text text-darken-1">
+                <time datetime="2017-07-26T09:10:08.000Z">2017-07-26</time>
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                javascript面试问题（一）
+            </a>
         
     </div>
-
-
-            <div class="toc pink-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#克隆github上的项目到本地"><span class="section table-of-contents-text">克隆github上的项目到本地</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#新建develop分支"><span class="section table-of-contents-text">新建develop分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#删除develop分支"><span class="section table-of-contents-text">删除develop分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#切换到develop分支"><span class="section table-of-contents-text">切换到develop分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#查看本地分支"><span class="section table-of-contents-text">查看本地分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#查看所有分支"><span class="section table-of-contents-text">查看所有分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#添加修改"><span class="section table-of-contents-text">添加修改</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#提交修改"><span class="section table-of-contents-text">提交修改</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#推送到远程"><span class="section table-of-contents-text">推送到远程</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#将本地develop分支关联到远程develop分支"><span class="section table-of-contents-text">将本地develop分支关联到远程develop分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#查看版本之间的差异"><span class="section table-of-contents-text">查看版本之间的差异</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#将develop分支合并到master"><span class="section table-of-contents-text">将develop分支合并到master</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#删除本地分支"><span class="section table-of-contents-text">删除本地分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#删除远程分支"><span class="section table-of-contents-text">删除远程分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#查看提交历史"><span class="section table-of-contents-text">查看提交历史</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#回退到某个版本"><span class="section table-of-contents-text">回退到某个版本</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#回退后强制提交"><span class="section table-of-contents-text">回退后强制提交</span></a></li></ol>
-</div>
-
-
-            <div class="entry pink-link-context">
-                <h5 id="克隆github上的项目到本地"><a href="#克隆github上的项目到本地" class="headerlink" title="克隆github上的项目到本地"></a>克隆github上的项目到本地</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/cherry0310/xxx.git</div></pre></td></tr></table></figure>
-<h5 id="新建develop分支"><a href="#新建develop分支" class="headerlink" title="新建develop分支"></a>新建develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -b develop</div></pre></td></tr></table></figure>
-<h5 id="删除develop分支"><a href="#删除develop分支" class="headerlink" title="删除develop分支"></a>删除develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d develop</div></pre></td></tr></table></figure>
-<h5 id="切换到develop分支"><a href="#切换到develop分支" class="headerlink" title="切换到develop分支"></a>切换到develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout develop</div></pre></td></tr></table></figure>
-<h5 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch</div></pre></td></tr></table></figure>
-<h5 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a>查看所有分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -a</div></pre></td></tr></table></figure>
-<h5 id="添加修改"><a href="#添加修改" class="headerlink" title="添加修改"></a>添加修改</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add .</div><div class="line">git add -A</div></pre></td></tr></table></figure>
-<h5 id="提交修改"><a href="#提交修改" class="headerlink" title="提交修改"></a>提交修改</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -m <span class="string">'修改原因'</span></div></pre></td></tr></table></figure>
-<h5 id="推送到远程"><a href="#推送到远程" class="headerlink" title="推送到远程"></a>推送到远程</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push</div></pre></td></tr></table></figure>
-<h5 id="将本地develop分支关联到远程develop分支"><a href="#将本地develop分支关联到远程develop分支" class="headerlink" title="将本地develop分支关联到远程develop分支"></a>将本地develop分支关联到远程develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push --<span class="built_in">set</span>-upstream origin develop</div></pre></td></tr></table></figure>
-<h5 id="查看版本之间的差异"><a href="#查看版本之间的差异" class="headerlink" title="查看版本之间的差异"></a>查看版本之间的差异</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git diff</div></pre></td></tr></table></figure>
-<h5 id="将develop分支合并到master"><a href="#将develop分支合并到master" class="headerlink" title="将develop分支合并到master"></a>将develop分支合并到master</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git merge --no-ff develop</div></pre></td></tr></table></figure>
-<ul>
-<li>不使用–no-ff，git执行快进式合并，master直接指向develop分支</li>
-<li>使用–no-ff，git执行正常合并，在master支上生成新节点</li>
-</ul>
-<h5 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d develop</div></pre></td></tr></table></figure>
-<h5 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin --delete develop</div></pre></td></tr></table></figure>
-<h5 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span></div></pre></td></tr></table></figure>
-<h5 id="回退到某个版本"><a href="#回退到某个版本" class="headerlink" title="回退到某个版本"></a>回退到某个版本</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reset --hard f17a150b38d332015ab5911c5820dee385c420db</div></pre></td></tr></table></figure>
-<h5 id="回退后强制提交"><a href="#回退后强制提交" class="headerlink" title="回退后强制提交"></a>回退后强制提交</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push -f</div></pre></td></tr></table></figure>
-
-                
-<p class="pink-link-context">
-    <a href="/2017/07/24/hexo-command/" rel="next" title="hexo 基本命令">
-    上一篇：hexo 基本命令
-  </a>
-</p>
-
-
-
-
-            </div>
-			
-        </div>
-    </div>
-</article>
-
-
-
-
 
 
 </div>

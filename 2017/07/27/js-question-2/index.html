@@ -7,18 +7,18 @@
 
     
 
-    <title>git 基本命令 | cherry的技术小窝</title>
+    <title>javascript面试问题（二） | cherry的技术小窝</title>
     <meta name="author" content="cherry">
     
-    <meta name="description" content="克隆github上的项目到本地1git clone https://github.com/cherry0310/xxx.git
-新建develop分支1git checkout -b develop
-删除develop分支1git branch -d develop
-切换到develop分支1git">
+    <meta name="description" content="1.ajax原理
+代码实现
+
+123456789101112131415161718192021222324252627function Ajax(obj)&amp;#123;    this.method = obj.method || &#39;get&#39;    this.url = obj.url || &#39;&#39; ">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="git 基本命令"/>
+    <meta property="og:title" content="javascript面试问题（二）"/>
     <meta property="og:site_name" content="cherry的技术小窝"/>
 
     
@@ -209,10 +209,6 @@
         <span class="breadcrumb">当前位置（分类目录）</span>
         
             
-    
-    
-    <a class="breadcrumb" href="/categories/命令清单/">命令清单</a><a class="breadcrumb" href="/categories/命令清单/git/">git</a>
-
 
         
 
@@ -228,12 +224,12 @@
             <div class="article-title">
                 
     
-        <h1>git 基本命令</h1>
+        <h1>javascript面试问题（二）</h1>
     
 
 
             </div>
-            <time class="pink-link-context" datetime="2017-07-24T03:26:51.000Z"><a href="/2017/07/24/git-command/">2017-07-24</a></time>
+            <time class="pink-link-context" datetime="2017-07-27T07:36:46.000Z"><a href="/2017/07/27/js-question-2/">2017-07-27</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -243,49 +239,91 @@
             
     <div class="tags-row">
         
-            <a href="/tags/git/" class="chip pink lighten-1">git</a>
+            <a href="/tags/面试/" class="chip pink lighten-1">面试</a>
         
-            <a href="/tags/命令清单/" class="chip pink lighten-1">命令清单</a>
+            <a href="/tags/javascript/" class="chip pink lighten-1">javascript</a>
         
     </div>
 
 
             <div class="toc pink-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#克隆github上的项目到本地"><span class="section table-of-contents-text">克隆github上的项目到本地</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#新建develop分支"><span class="section table-of-contents-text">新建develop分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#删除develop分支"><span class="section table-of-contents-text">删除develop分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#切换到develop分支"><span class="section table-of-contents-text">切换到develop分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#查看本地分支"><span class="section table-of-contents-text">查看本地分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#查看所有分支"><span class="section table-of-contents-text">查看所有分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#添加修改"><span class="section table-of-contents-text">添加修改</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#提交修改"><span class="section table-of-contents-text">提交修改</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#推送到远程"><span class="section table-of-contents-text">推送到远程</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#将本地develop分支关联到远程develop分支"><span class="section table-of-contents-text">将本地develop分支关联到远程develop分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#查看版本之间的差异"><span class="section table-of-contents-text">查看版本之间的差异</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#将develop分支合并到master"><span class="section table-of-contents-text">将develop分支合并到master</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#删除本地分支"><span class="section table-of-contents-text">删除本地分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#删除远程分支"><span class="section table-of-contents-text">删除远程分支</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#查看提交历史"><span class="section table-of-contents-text">查看提交历史</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#回退到某个版本"><span class="section table-of-contents-text">回退到某个版本</span></a></li><li class="section table-of-contents-item section table-of-contents-level-5"><a class="section table-of-contents-link" href="#回退后强制提交"><span class="section table-of-contents-text">回退后强制提交</span></a></li></ol>
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-ajax原理"><span class="section table-of-contents-text">1.ajax原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-JSONP的工作原理"><span class="section table-of-contents-text">2.JSONP的工作原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-解释hoisting（提升）"><span class="section table-of-contents-text">3.解释hoisting（提升）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-同源策略"><span class="section table-of-contents-text">4.同源策略</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-”use-strict”的优缺点是什么"><span class="section table-of-contents-text">5.”use strict”的优缺点是什么</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-可变对象和不可变对象的区别"><span class="section table-of-contents-text">6.可变对象和不可变对象的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7-javascript中的事件循环、调用栈、任务队列"><span class="section table-of-contents-text">7.javascript中的事件循环、调用栈、任务队列</span></a></li></ol>
 </div>
 
 
             <div class="entry pink-link-context">
-                <h5 id="克隆github上的项目到本地"><a href="#克隆github上的项目到本地" class="headerlink" title="克隆github上的项目到本地"></a>克隆github上的项目到本地</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/cherry0310/xxx.git</div></pre></td></tr></table></figure>
-<h5 id="新建develop分支"><a href="#新建develop分支" class="headerlink" title="新建develop分支"></a>新建develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -b develop</div></pre></td></tr></table></figure>
-<h5 id="删除develop分支"><a href="#删除develop分支" class="headerlink" title="删除develop分支"></a>删除develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d develop</div></pre></td></tr></table></figure>
-<h5 id="切换到develop分支"><a href="#切换到develop分支" class="headerlink" title="切换到develop分支"></a>切换到develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout develop</div></pre></td></tr></table></figure>
-<h5 id="查看本地分支"><a href="#查看本地分支" class="headerlink" title="查看本地分支"></a>查看本地分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch</div></pre></td></tr></table></figure>
-<h5 id="查看所有分支"><a href="#查看所有分支" class="headerlink" title="查看所有分支"></a>查看所有分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -a</div></pre></td></tr></table></figure>
-<h5 id="添加修改"><a href="#添加修改" class="headerlink" title="添加修改"></a>添加修改</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add .</div><div class="line">git add -A</div></pre></td></tr></table></figure>
-<h5 id="提交修改"><a href="#提交修改" class="headerlink" title="提交修改"></a>提交修改</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -m <span class="string">'修改原因'</span></div></pre></td></tr></table></figure>
-<h5 id="推送到远程"><a href="#推送到远程" class="headerlink" title="推送到远程"></a>推送到远程</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push</div></pre></td></tr></table></figure>
-<h5 id="将本地develop分支关联到远程develop分支"><a href="#将本地develop分支关联到远程develop分支" class="headerlink" title="将本地develop分支关联到远程develop分支"></a>将本地develop分支关联到远程develop分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push --<span class="built_in">set</span>-upstream origin develop</div></pre></td></tr></table></figure>
-<h5 id="查看版本之间的差异"><a href="#查看版本之间的差异" class="headerlink" title="查看版本之间的差异"></a>查看版本之间的差异</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git diff</div></pre></td></tr></table></figure>
-<h5 id="将develop分支合并到master"><a href="#将develop分支合并到master" class="headerlink" title="将develop分支合并到master"></a>将develop分支合并到master</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git merge --no-ff develop</div></pre></td></tr></table></figure>
+                <h3 id="1-ajax原理"><a href="#1-ajax原理" class="headerlink" title="1.ajax原理"></a>1.ajax原理</h3><blockquote>
+<p>代码实现</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ajax</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.method = obj.method || <span class="string">'get'</span></div><div class="line">    <span class="keyword">this</span>.url = obj.url || <span class="string">''</span></div><div class="line">    <span class="keyword">this</span>.async = obj.async || <span class="literal">true</span></div><div class="line">    <span class="keyword">this</span>.data = obj.data || <span class="string">''</span></div><div class="line">    <span class="keyword">this</span>.callback = obj.callback || <span class="function"><span class="params">()</span>=&gt;</span>&#123;&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Ajax.prototype.send = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">    xhr.onreadystatechange = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">        <span class="keyword">if</span>(xhr.readystate == <span class="number">4</span>)&#123;</div><div class="line">            callback(xhr.responseText)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(method == <span class="string">'get'</span>)&#123;</div><div class="line">        xhr.open(<span class="string">'GET'</span>, url, <span class="keyword">async</span>)</div><div class="line">        xhr.send(<span class="literal">null</span>)</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(method == <span class="string">'post'</span>)&#123;</div><div class="line">        xhr.open(<span class="string">'POST'</span>, url, <span class="keyword">async</span>)</div><div class="line">        xhr.setRequestHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/x-www-form-urlencoded'</span>)</div><div class="line">        xhr.send(data)</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'无法识别方法'</span>)</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> ajax = <span class="keyword">new</span> Ajax(&#123;</div><div class="line">    <span class="attr">method</span>: <span class="string">'post'</span>,</div><div class="line">    <span class="attr">url</span>: <span class="string">'http://localhost:3000'</span>,</div><div class="line">    <span class="attr">async</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">data</span>: <span class="built_in">JSON</span>.stringify(data),</div><div class="line">    <span class="attr">callback</span>: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(res)</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line">ajax.send()</div></pre></td></tr></table></figure>
+<blockquote>
+<p>XMLHttpRequest对象的属性</p>
+</blockquote>
 <ul>
-<li>不使用–no-ff，git执行快进式合并，master直接指向develop分支</li>
-<li>使用–no-ff，git执行正常合并，在master支上生成新节点</li>
+<li><strong>onreadystatechange</strong> 每次readystate改变触发的事件处理程序</li>
+<li><strong>readyState</strong> 对象状态值<br>-0表示未初始化，还没调用open方法<br>-1表示初始化，已调用open未调用send方法<br>-2表示发送数据，已调用send，但当前状态和http头未知<br>-3表示接收数据，已接收部分数据<br>-4表示完成，数据接收完毕</li>
+<li><strong>status</strong> 从服务器返回的状态码，如200，404</li>
+<li><strong>statusText</strong> 伴随status的描述文字，如OK</li>
+<li><strong>responseText</strong> 从服务器返回的数据的字符串形式</li>
 </ul>
-<h5 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -d develop</div></pre></td></tr></table></figure>
-<h5 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin --delete develop</div></pre></td></tr></table></figure>
-<h5 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span></div></pre></td></tr></table></figure>
-<h5 id="回退到某个版本"><a href="#回退到某个版本" class="headerlink" title="回退到某个版本"></a>回退到某个版本</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reset --hard f17a150b38d332015ab5911c5820dee385c420db</div></pre></td></tr></table></figure>
-<h5 id="回退后强制提交"><a href="#回退后强制提交" class="headerlink" title="回退后强制提交"></a>回退后强制提交</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push -f</div></pre></td></tr></table></figure>
-
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>-异步获取数据，不打断用户的操作<br>-前后端分离</p>
+<h3 id="2-JSONP的工作原理"><a href="#2-JSONP的工作原理" class="headerlink" title="2.JSONP的工作原理"></a>2.JSONP的工作原理</h3><blockquote>
+<p>出现原因</p>
+</blockquote>
+<p>浏览器发送ajax请求的时候只能请求同源地址上的数据，不能跨域请求；但是html页面上的script标签可以请求跨域的javascript文件。注意JSONP只能用于get操作。</p>
+<blockquote>
+<p>工作原理</p>
+</blockquote>
+<p>1.创建一个方法来处理从API处返回的数据<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myCallbackFunction</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.在页面上加一个script标签，来加载API，同时在url后面添加callback参数<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://other.com/api.json?callback=myCallbackFunction"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>3.服务器上对应的API会返回数据，但不是单纯的JSON，而是包裹着回调函数的JSON</p>
+<p>4.script标签拿到返回的数据后会立即执行，即调用myCallbackFunction，在控制台打印出data</p>
+<h3 id="3-解释hoisting（提升）"><a href="#3-解释hoisting（提升）" class="headerlink" title="3.解释hoisting（提升）"></a>3.解释hoisting（提升）</h3><p>提升是指js中的声明会被解析器提升到所在作用域的顶部。</p>
+<blockquote>
+<p>变量声明提升</p>
+</blockquote>
+<p>var temp = 1;这句语句会被拆成var temp; （被提升到当前作用于的顶部）以及temp = 1;（初始化保留在原位置）。</p>
+<blockquote>
+<p>函数声明提升</p>
+</blockquote>
+<p>变量只是提升声明、不提升初始化，但是函数会将声明和定义一起提升到作用域顶部。<strong>注意：</strong> 函数提升优先级比变量提升高，不会被变量声明覆盖，但会被变量赋值覆盖</p>
+<p>下面两段代码，后者是前者提升之后的实际顺序<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">containingFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> hoisted = <span class="string">"I'm the variable"</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">hoisted</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"I'm the function"</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> hoisted(); <span class="comment">// results in a TypeError</span></div><div class="line">&#125;</div><div class="line">containingFunction()</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">containingFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">hoisted</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"I'm the function"</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> hoisted;</div><div class="line">    hoisted = <span class="string">"I'm the variable"</span>;</div><div class="line">    <span class="keyword">return</span> hoisted();</div><div class="line">&#125;</div><div class="line">containingFunction()</div></pre></td></tr></table></figure>
+<h3 id="4-同源策略"><a href="#4-同源策略" class="headerlink" title="4.同源策略"></a>4.同源策略</h3><p>同源策略限制了一个域上的脚本只可以与同源的资源交互，同源策略可以有效防止来自其他源的恶意攻击。<br>同源是指<strong>协议(http vs https)、域名、端口号都相等</strong>，只要任一个值不同，就认为是不同源。</p>
+<h3 id="5-”use-strict”的优缺点是什么"><a href="#5-”use-strict”的优缺点是什么" class="headerlink" title="5.”use strict”的优缺点是什么"></a>5.”use strict”的优缺点是什么</h3><blockquote>
+<p>定义</p>
+</blockquote>
+<p>把”use strict”放在代码或方法的顶部，js将会以严格模式来执行，严格模式会抛出更多的错误以及禁止一些特性，目的是为了让你的代码更健壮、更精确、可读性更好。</p>
+<blockquote>
+<p>优点</p>
+</blockquote>
+<p>-捕获常见的代码错误，抛出异常；<br>-它会防止一些不安全的行为发生，或者当发生的时候抛出异常；<br>-它会禁用一些令人困惑或考虑不周的特性。</p>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<p>-当混用严格模式和正常(normal)模式的时候会有一些问题；<br>-严格模式的限制很多，有些开发人员希望使用语言的所有特性</p>
+<h3 id="6-可变对象和不可变对象的区别"><a href="#6-可变对象和不可变对象的区别" class="headerlink" title="6.可变对象和不可变对象的区别"></a>6.可变对象和不可变对象的区别</h3><blockquote>
+<p>不可变对象</p>
+</blockquote>
+<p>不可变是指一旦初始化一个对象，你就不能再修改它的property了。例如字符串数值，它永远创造一个新的实例，然后存到一个变量里，字符串上的任何操作都不会影响它的初始值。<br>var str = “abc”; //当你创建abc字符串的时候，分配了内存给abc，这个内存是不会变的，直到被垃圾回收。</p>
+<p>-优点：防止对对象的意外修改；内存分配固定，不需要扩充<br>-缺点：性能比较差，总是要创建新的实例</p>
+<blockquote>
+<p>可变对象</p>
+</blockquote>
+<p>比如数组。<br>var num = [1,2,3]; num[0] = “a”; console.log(num); //[“a”,2,3]</p>
+<h3 id="7-javascript中的事件循环、调用栈、任务队列"><a href="#7-javascript中的事件循环、调用栈、任务队列" class="headerlink" title="7.javascript中的事件循环、调用栈、任务队列"></a>7.javascript中的事件循环、调用栈、任务队列</h3>
                 
+
+
 <p class="pink-link-context">
-    <a href="/2017/07/24/hexo-command/" rel="next" title="hexo 基本命令">
-    上一篇：hexo 基本命令
+    <a href="/2017/07/26/js-question-1/" rel="next" title="javascript面试问题（一）">
+    下一篇：javascript面试问题（一）
   </a>
 </p>
-
-
 
 
             </div>
