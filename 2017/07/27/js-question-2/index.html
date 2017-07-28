@@ -247,7 +247,7 @@
 
 
             <div class="toc pink-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-ajax原理"><span class="section table-of-contents-text">1.ajax原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-JSONP的工作原理"><span class="section table-of-contents-text">2.JSONP的工作原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-解释hoisting（提升）"><span class="section table-of-contents-text">3.解释hoisting（提升）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-同源策略"><span class="section table-of-contents-text">4.同源策略</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-”use-strict”的优缺点是什么"><span class="section table-of-contents-text">5.”use strict”的优缺点是什么</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-可变对象和不可变对象的区别"><span class="section table-of-contents-text">6.可变对象和不可变对象的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7-javascript中的事件循环、调用栈、任务队列"><span class="section table-of-contents-text">7.javascript中的事件循环、调用栈、任务队列</span></a></li></ol>
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-ajax原理"><span class="section table-of-contents-text">1.ajax原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-JSONP的工作原理"><span class="section table-of-contents-text">2.JSONP的工作原理</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-解释hoisting（提升）"><span class="section table-of-contents-text">3.解释hoisting（提升）</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-同源策略"><span class="section table-of-contents-text">4.同源策略</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-”use-strict”的优缺点是什么"><span class="section table-of-contents-text">5.”use strict”的优缺点是什么</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6-可变对象和不可变对象的区别"><span class="section table-of-contents-text">6.可变对象和不可变对象的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7-javascript中的事件循环、调用栈、任务队列"><span class="section table-of-contents-text">7.javascript中的事件循环、调用栈、任务队列</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#8-let和var的区别"><span class="section table-of-contents-text">8.let和var的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#9-如何将伪数组转化为标准数组"><span class="section table-of-contents-text">9.如何将伪数组转化为标准数组</span></a></li></ol>
 </div>
 
 
@@ -315,7 +315,39 @@
 <p>可变对象</p>
 </blockquote>
 <p>比如数组。<br>var num = [1,2,3]; num[0] = “a”; console.log(num); //[“a”,2,3]</p>
-<h3 id="7-javascript中的事件循环、调用栈、任务队列"><a href="#7-javascript中的事件循环、调用栈、任务队列" class="headerlink" title="7.javascript中的事件循环、调用栈、任务队列"></a>7.javascript中的事件循环、调用栈、任务队列</h3>
+<h3 id="7-javascript中的事件循环、调用栈、任务队列"><a href="#7-javascript中的事件循环、调用栈、任务队列" class="headerlink" title="7.javascript中的事件循环、调用栈、任务队列"></a>7.javascript中的事件循环、调用栈、任务队列</h3><p><img src="http://ojx4wlqvg.bkt.clouddn.com/image/blog/eventloop.png" width="200" height="200" alt="堆栈队列示意图"><br>javascript是一种单线程语言</p>
+<blockquote>
+<p>堆</p>
+</blockquote>
+<p>对象被分配在堆(heap)中，栈内存中存放指向堆内存对象的地址</p>
+<blockquote>
+<p>栈</p>
+</blockquote>
+<p>javascript中的基本类型的值被存储在栈空间，它们占有固定大小的空间<br>函数调用形成了一个栈（stack），当调用一个函数的时候，会在栈中创建一个帧(橙色)，包括了函数的参数和局部变量，当执行函数内return语句后，函数会从栈中出栈</p>
+<blockquote>
+<p>消息队列</p>
+</blockquote>
+<p>js运行的时候包含了一个待处理的消息队列(queue)，每一个消息都和一个函数关联。当栈为空的时候，就从消息队列中取出一个消息进行处理。这个处理包含了调用与之相关的函数，在栈中创建该函数的帧。当栈再次为空的时候，表示该消息处理结束。</p>
+<p>一个消息执行完成之后其他消息才能执行；当有一个事件发生、并且这个事件上绑定了事件监听器，就在向消息队列中添加一个消息。<br>如果用setTimeout来执行函数，那么函数会在设定时间（即setTimeout的第二个参数）后加入消息队列，但是并不一定在设定时间后立即执行，因为要等待消息队列里的之前的消息执行完毕。所以第二个参数只是至少要等待的时间。</p>
+<h3 id="8-let和var的区别"><a href="#8-let和var的区别" class="headerlink" title="8.let和var的区别"></a>8.let和var的区别</h3><ul>
+<li><p>let是块级作用域，var是函数作用域</p>
+</li>
+<li><p>重复声明并赋值一个变量时，let报错，var不会报错</p>
+</li>
+<li><p>let不会进行变量提升，var会提升</p>
+</li>
+<li><p>let和const的暂时性死区：进入它的作用域，它不能被访问直到执行到达声明</p>
+</li>
+</ul>
+<h3 id="9-如何将伪数组转化为标准数组"><a href="#9-如何将伪数组转化为标准数组" class="headerlink" title="9.如何将伪数组转化为标准数组"></a>9.如何将伪数组转化为标准数组</h3><blockquote>
+<p>定义</p>
+</blockquote>
+<p>无法直接调用数组方法 || length属性没有什么特殊含义，但是可以用遍历数组的方法遍历它。典型的伪数组有函数的arguments参数，DOM中的NodeList对象。</p>
+<blockquote>
+<p>转化方法</p>
+</blockquote>
+<p>Array.prototype.slice.call(fakeArray)</p>
+
                 
 
 
