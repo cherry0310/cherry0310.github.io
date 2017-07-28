@@ -7,13 +7,18 @@
 
     
 
-    <title>归档：2017 | cherry的技术小窝</title>
+    <title>深复制和浅复制 | cherry的技术小窝</title>
     <meta name="author" content="cherry">
+    
+    <meta name="description" content="1.浅复制
+浅复制的含义
+
+浅复制只复制一层对象的属性，并不会进行递归复制；针对引用类型，只复制了引用地址，不会复制引用的对象，即obj.arr和shadowObj.arr指向的是同一个对象。">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="深复制和浅复制"/>
     <meta property="og:site_name" content="cherry的技术小窝"/>
 
     
@@ -199,88 +204,89 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper green">
-        <span class="breadcrumb">当前位置（归档）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
         
 
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>深复制和浅复制</h1>
+    
 
 
-    <ul class="collapsible mt-0" data-collapsible="accordion">
+            </div>
+            <time class="pink-link-context" datetime="2017-07-28T07:06:56.000Z"><a href="/2017/07/28/deep-shadow-copy/">2017-07-28</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
+            <a href="/tags/javascript/" class="chip pink lighten-1">javascript</a>
         
-            <li>
-                <div class="collapsible-header active">
-                    <i class="fa fa-archive"></i>2017
-                </div>
-                <div class="collapsible-body">
-                    <div class="collection">
-                        
-                            <a href="/2017/07/28/deep-shadow-copy/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-28T07:06:56.000Z">2017-07-28</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                深复制和浅复制
-                            </a>
-                        
-                            <a href="/2017/07/27/js-question-2/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-27T07:36:46.000Z">2017-07-27</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                javascript面试问题（二）
-                            </a>
-                        
-                            <a href="/2017/07/26/js-question-1/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-26T09:10:08.000Z">2017-07-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                javascript面试问题（一）
-                            </a>
-                        
-                            <a href="/2017/07/26/css-question-3/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-26T08:49:15.000Z">2017-07-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                css面试问题（三）
-                            </a>
-                        
-                            <a href="/2017/07/26/css-question-2/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-26T06:35:29.000Z">2017-07-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                css面试问题（二）
-                            </a>
-                        
-                            <a href="/2017/07/26/css-question-1/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-26T02:20:56.000Z">2017-07-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                css面试问题（一）
-                            </a>
-                        
-                            <a href="/2017/07/24/html-question/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-24T11:15:03.000Z">2017-07-24</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                html 面试问题
-                            </a>
-                        
-                            <a href="/2017/07/24/hexo-command/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-24T11:14:24.000Z">2017-07-24</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                hexo 基本命令
-                            </a>
-                        
-                            <a href="/2017/07/24/git-command/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-24T03:26:51.000Z">2017-07-24</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                git 基本命令
-                            </a>
-                        
-                    </div>
-                </div>
-            </li>
-        
-    </ul>
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-浅复制"><span class="section table-of-contents-text">1.浅复制</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-深复制"><span class="section table-of-contents-text">2.深复制</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h3 id="1-浅复制"><a href="#1-浅复制" class="headerlink" title="1.浅复制"></a>1.浅复制</h3><blockquote>
+<p>浅复制的含义</p>
+</blockquote>
+<p>浅复制只复制一层对象的属性，并不会进行递归复制；针对引用类型，只复制了引用地址，不会复制引用的对象，即obj.arr和shadowObj.arr指向的是同一个对象。<br><a id="more"></a></p>
+<blockquote>
+<p>浅复制的实现</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shadowCopy</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> temp = &#123;&#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> prop <span class="keyword">in</span> obj)&#123;</div><div class="line">        <span class="keyword">if</span>(obj.hasOwnProperty(prop))&#123;</div><div class="line">            temp[prop] = obj[prop]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> temp</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    <span class="attr">age</span>: <span class="number">10</span>,</div><div class="line">    <span class="attr">colors</span>: [<span class="string">'pink'</span>, <span class="string">'green'</span>]</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> shadowObj = shadowCopy(obj)</div><div class="line"><span class="comment">//此时obj.colors === shadowObj.colors</span></div></pre></td></tr></table></figure>
+<h3 id="2-深复制"><a href="#2-深复制" class="headerlink" title="2.深复制"></a>2.深复制</h3><blockquote>
+<p>深复制的含义</p>
+</blockquote>
+<p>深复制它不仅将原对象的各个属性逐个复制出去，而且将原对象各个属性所包含的对象也依次采用深复制的方法递归复制到新对象上。</p>
+<blockquote>
+<p>深复制的实现</p>
+</blockquote>
+<p>（1）方法一<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj))</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    <span class="attr">age</span>: <span class="number">10</span>,</div><div class="line">    <span class="attr">colors</span>: [<span class="string">'pink'</span>, <span class="string">'green'</span>]</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> deepObj = deepCopy(obj)</div><div class="line"><span class="comment">//此时obj.colors != deepObj.colors</span></div></pre></td></tr></table></figure></p>
+<p>（2）更完善的方法二<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> newObj = obj.constructor == <span class="string">'Array'</span> ? [] : &#123;&#125;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> obj != <span class="string">'object'</span>)&#123;</div><div class="line">        <span class="keyword">return</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.JSON)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj))</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> prop <span class="keyword">in</span> obj)&#123;</div><div class="line">        newObj[prop] = <span class="keyword">typeof</span> obj[prop] === <span class="string">'object'</span> ? deepCopy(obj[prop]) : obj[prop]</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> newObj</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/2017/07/27/js-question-2/" rel="next" title="javascript面试问题（二）">
+    下一篇：javascript面试问题（二）
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>

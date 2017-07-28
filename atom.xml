@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-28T03:56:48.000Z</updated>
+  <updated>2017-07-28T08:39:10.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深复制和浅复制</title>
+    <link href="http://yoursite.com/2017/07/28/deep-shadow-copy/"/>
+    <id>http://yoursite.com/2017/07/28/deep-shadow-copy/</id>
+    <published>2017-07-28T07:06:56.000Z</published>
+    <updated>2017-07-28T08:39:10.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-浅复制&quot;&gt;&lt;a href=&quot;#1-浅复制&quot; class=&quot;headerlink&quot; title=&quot;1.浅复制&quot;&gt;&lt;/a&gt;1.浅复制&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;浅复制的含义&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;浅复制只复制一层对象的属性，并不会进行递归复制；针对引用类型，只复制了引用地址，不会复制引用的对象，即obj.arr和shadowObj.arr指向的是同一个对象。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>javascript面试问题（二）</title>

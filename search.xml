@@ -3,6 +3,37 @@
   
     
     <entry>
+      <title><![CDATA[深复制和浅复制]]></title>
+      <url>/2017/07/28/deep-shadow-copy/</url>
+      <content type="html"><![CDATA[<h3 id="1-浅复制"><a href="#1-浅复制" class="headerlink" title="1.浅复制"></a>1.浅复制</h3><blockquote>
+<p>浅复制的含义</p>
+</blockquote>
+<p>浅复制只复制一层对象的属性，并不会进行递归复制；针对引用类型，只复制了引用地址，不会复制引用的对象，即obj.arr和shadowObj.arr指向的是同一个对象。<br><a id="more"></a></p>
+<blockquote>
+<p>浅复制的实现</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shadowCopy</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> temp = &#123;&#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> prop <span class="keyword">in</span> obj)&#123;</div><div class="line">        <span class="keyword">if</span>(obj.hasOwnProperty(prop))&#123;</div><div class="line">            temp[prop] = obj[prop]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> temp</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    <span class="attr">age</span>: <span class="number">10</span>,</div><div class="line">    <span class="attr">colors</span>: [<span class="string">'pink'</span>, <span class="string">'green'</span>]</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> shadowObj = shadowCopy(obj)</div><div class="line"><span class="comment">//此时obj.colors === shadowObj.colors</span></div></pre></td></tr></table></figure>
+<h3 id="2-深复制"><a href="#2-深复制" class="headerlink" title="2.深复制"></a>2.深复制</h3><blockquote>
+<p>深复制的含义</p>
+</blockquote>
+<p>深复制它不仅将原对象的各个属性逐个复制出去，而且将原对象各个属性所包含的对象也依次采用深复制的方法递归复制到新对象上。</p>
+<blockquote>
+<p>深复制的实现</p>
+</blockquote>
+<p>（1）方法一<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj))</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    <span class="attr">age</span>: <span class="number">10</span>,</div><div class="line">    <span class="attr">colors</span>: [<span class="string">'pink'</span>, <span class="string">'green'</span>]</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> deepObj = deepCopy(obj)</div><div class="line"><span class="comment">//此时obj.colors != deepObj.colors</span></div></pre></td></tr></table></figure></p>
+<p>（2）更完善的方法二<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> newObj = obj.constructor == <span class="string">'Array'</span> ? [] : &#123;&#125;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> obj != <span class="string">'object'</span>)&#123;</div><div class="line">        <span class="keyword">return</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.JSON)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj))</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> prop <span class="keyword">in</span> obj)&#123;</div><div class="line">        newObj[prop] = <span class="keyword">typeof</span> obj[prop] === <span class="string">'object'</span> ? deepCopy(obj[prop]) : obj[prop]</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> newObj</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[javascript面试问题（二）]]></title>
       <url>/2017/07/27/js-question-2/</url>
       <content type="html"><![CDATA[<h3 id="1-ajax原理"><a href="#1-ajax原理" class="headerlink" title="1.ajax原理"></a>1.ajax原理</h3><blockquote>
