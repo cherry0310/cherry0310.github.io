@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-28T08:39:10.000Z</updated>
+  <updated>2017-07-31T03:28:12.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跨域方法总结</title>
+    <link href="http://yoursite.com/2017/07/31/cross-origin/"/>
+    <id>http://yoursite.com/2017/07/31/cross-origin/</id>
+    <published>2017-07-31T02:04:56.000Z</published>
+    <updated>2017-07-31T03:28:12.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-JSONP&quot;&gt;&lt;a href=&quot;#1-JSONP&quot; class=&quot;headerlink&quot; title=&quot;1.JSONP&quot;&gt;&lt;/a&gt;1.JSONP&lt;/h3&gt;&lt;p&gt;JSON With Padding，用于ajax中的跨域，详见js面试问题二中的&lt;a href=&quot;../../../../2017/07/27/js-question-2/&quot;&gt;JSONP&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2-修改document-domain&quot;&gt;&lt;a href=&quot;#2-修改document-domain&quot; class=&quot;headerlink&quot; title=&quot;2.修改document.domain&quot;&gt;&lt;/a&gt;2.修改document.domain&lt;/h3&gt;&lt;p&gt;document.domain只能设置成自身或更高一级的父域，且主域必须相同。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>深复制和浅复制</title>
@@ -53,9 +74,9 @@
     </summary>
     
     
-      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -73,9 +94,9 @@
     </summary>
     
     
-      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   

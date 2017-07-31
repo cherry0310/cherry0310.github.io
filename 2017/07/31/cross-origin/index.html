@@ -7,13 +7,16 @@
 
     
 
-    <title>归档：2017 | cherry的技术小窝</title>
+    <title>跨域方法总结 | cherry的技术小窝</title>
     <meta name="author" content="cherry">
+    
+    <meta name="description" content="1.JSONPJSON With Padding，用于ajax中的跨域，详见js面试问题二中的JSONP
+2.修改document.domaindocument.domain只能设置成自身或更高一级的父域，且主域必须相同。">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="跨域方法总结"/>
     <meta property="og:site_name" content="cherry的技术小窝"/>
 
     
@@ -199,94 +202,109 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper green">
-        <span class="breadcrumb">当前位置（归档）</span>
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+
         
 
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>跨域方法总结</h1>
+    
 
 
-    <ul class="collapsible mt-0" data-collapsible="accordion">
+            </div>
+            <time class="pink-link-context" datetime="2017-07-31T02:04:56.000Z"><a href="/2017/07/31/cross-origin/">2017-07-31</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
+            <a href="/tags/javascript/" class="chip pink lighten-1">javascript</a>
         
-            <li>
-                <div class="collapsible-header active">
-                    <i class="fa fa-archive"></i>2017
-                </div>
-                <div class="collapsible-body">
-                    <div class="collection">
-                        
-                            <a href="/2017/07/31/cross-origin/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-31T02:04:56.000Z">2017-07-31</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                跨域方法总结
-                            </a>
-                        
-                            <a href="/2017/07/28/deep-shadow-copy/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-28T07:06:56.000Z">2017-07-28</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                深复制和浅复制
-                            </a>
-                        
-                            <a href="/2017/07/27/js-question-2/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-27T07:36:46.000Z">2017-07-27</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                javascript面试问题（二）
-                            </a>
-                        
-                            <a href="/2017/07/26/js-question-1/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-26T09:10:08.000Z">2017-07-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                javascript面试问题（一）
-                            </a>
-                        
-                            <a href="/2017/07/26/css-question-3/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-26T08:49:15.000Z">2017-07-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                css面试问题（三）
-                            </a>
-                        
-                            <a href="/2017/07/26/css-question-2/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-26T06:35:29.000Z">2017-07-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                css面试问题（二）
-                            </a>
-                        
-                            <a href="/2017/07/26/css-question-1/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-26T02:20:56.000Z">2017-07-26</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                css面试问题（一）
-                            </a>
-                        
-                            <a href="/2017/07/24/html-question/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-24T11:15:03.000Z">2017-07-24</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                html 面试问题
-                            </a>
-                        
-                            <a href="/2017/07/24/hexo-command/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-24T11:14:24.000Z">2017-07-24</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                hexo 基本命令
-                            </a>
-                        
-                            <a href="/2017/07/24/git-command/" class="collection-item grey-text text-darken-1">
-                                <time datetime="2017-07-24T03:26:51.000Z">2017-07-24</time>
-                                <span>&nbsp;&nbsp;&nbsp;</span>
-                                git 基本命令
-                            </a>
-                        
-                    </div>
-                </div>
-            </li>
+            <a href="/tags/跨域/" class="chip pink lighten-1">跨域</a>
         
-    </ul>
+    </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-JSONP"><span class="section table-of-contents-text">1.JSONP</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-修改document-domain"><span class="section table-of-contents-text">2.修改document.domain</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-window-name"><span class="section table-of-contents-text">3.window.name</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-window-postMessage"><span class="section table-of-contents-text">4.window.postMessage</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#1-API说明"><span class="section table-of-contents-text">(1)API说明</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#2-代码实例一"><span class="section table-of-contents-text">(2)代码实例一</span></a></li><li class="section table-of-contents-item section table-of-contents-level-4"><a class="section table-of-contents-link" href="#3-代码实例二"><span class="section table-of-contents-text">(3)代码实例二</span></a></li></ol></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <h3 id="1-JSONP"><a href="#1-JSONP" class="headerlink" title="1.JSONP"></a>1.JSONP</h3><p>JSON With Padding，用于ajax中的跨域，详见js面试问题二中的<a href="../../../../2017/07/27/js-question-2/">JSONP</a></p>
+<h3 id="2-修改document-domain"><a href="#2-修改document-domain" class="headerlink" title="2.修改document.domain"></a>2.修改document.domain</h3><p>document.domain只能设置成自身或更高一级的父域，且主域必须相同。<br><a id="more"></a></p>
+<p>为了能让父域访问子域，可以通过设置document.domain将子域设置成更高一级的父域。</p>
+<p>例如父域是www.example.com, 子域是www.test.example.com, 要实现这种跨子域的交互，应该在父域和子域的js文件中都设置：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.domain = <span class="string">"www.example.com"</span></div></pre></td></tr></table></figure></p>
+<h3 id="3-window-name"><a href="#3-window-name" class="headerlink" title="3.window.name"></a>3.window.name</h3><p>window对象有一个name属性，该属性有个特征：即在<strong>一个窗口(window)</strong> 的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限</p>
+<h3 id="4-window-postMessage"><a href="#4-window-postMessage" class="headerlink" title="4.window.postMessage"></a>4.window.postMessage</h3><h4 id="1-API说明"><a href="#1-API说明" class="headerlink" title="(1)API说明"></a>(1)API说明</h4><blockquote>
+<p>otherWindow.postMessage(data, origin)<br><strong>otherWindow</strong> 接收消息的窗口对象</p>
+</blockquote>
+<p><strong>data</strong> 要传递的数据，可以是任意基本类型或者可复制的对象，它会自动被序列化，这意味着你可以不受什么限制的将数据对象安全的传送给目标窗口而无需自己序列化</p>
+<p><strong>origin</strong> 字符串参数，指明目标窗口的源（协议+主机+端口号），这个参数控制消息可以发送到哪些窗口，如果设置为*的话表示没有限制</p>
+<blockquote>
+<p>MessageEvent</p>
+</blockquote>
+<p>window.postMessage()方法被调用时，会在所有页面脚本执行完毕之后向目标窗口派发一个 MessageEvent 消息，该消息有4个属性：</p>
+<p><strong>data</strong> 从发送窗口传来的消息</p>
+<p><strong>source</strong> 发送消息的窗口对象</p>
+<p><strong>origin</strong> 发送消息的窗口的源（协议+主机+端口号）</p>
+<h4 id="2-代码实例一"><a href="#2-代码实例一" class="headerlink" title="(2)代码实例一"></a>(2)代码实例一</h4><p>A窗口通过postMessage发送消息，B窗口通过监听message事件接收消息</p>
+<blockquote>
+<p>窗口A：<a href="http://example.a.com" target="_blank" rel="external">http://example.a.com</a> —发送消息</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> popup = <span class="built_in">window</span>.open(<span class="string">'http://example.b.com'</span>);</div><div class="line"></div><div class="line">popup.postMessage(<span class="string">'hello,b'</span>, <span class="string">'http://example.b.com'</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>窗口B：<a href="http://example.b.com" target="_blank" rel="external">http://example.b.com</a> —接收消息</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">receiveMessage</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(event.origin != <span class="string">'http://example.a.com'</span>)&#123;</div><div class="line">        <span class="keyword">return</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(event.data)</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, receiveMessage, <span class="literal">false</span>)</div></pre></td></tr></table></figure>
+<h4 id="3-代码实例二"><a href="#3-代码实例二" class="headerlink" title="(3)代码实例二"></a>(3)代码实例二</h4><p>A窗口和B窗口相互通信，都发送和接收消息</p>
+<blockquote>
+<p>窗口A：<a href="http://example.a.com" target="_blank" rel="external">http://example.a.com</a></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> popup = <span class="built_in">window</span>.open(<span class="string">'http://example.b.com'</span>);</div><div class="line"></div><div class="line">popup.postMessage(<span class="string">'hello,b'</span>, <span class="string">'http://example.b.com'</span>);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">receiveMessage</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(event.origin != <span class="string">'http://example.b.com'</span>)&#123;</div><div class="line">        <span class="keyword">return</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(event.data)</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, receiveMessage, <span class="literal">false</span>)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>窗口B：<a href="http://example.b.com" target="_blank" rel="external">http://example.b.com</a></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">receiveMessage</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(event.origin != <span class="string">'http://example.a.com'</span>)&#123;</div><div class="line">        <span class="keyword">return</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(event.data)</div><div class="line">    event.source.postMessage(<span class="string">'thank you, a'</span>, event.origin);</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, receiveMessage, <span class="literal">false</span>)</div></pre></td></tr></table></figure>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/2017/07/28/deep-shadow-copy/" rel="next" title="深复制和浅复制">
+    下一篇：深复制和浅复制
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
 
 
 </div>

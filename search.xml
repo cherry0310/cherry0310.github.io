@@ -3,6 +3,57 @@
   
     
     <entry>
+      <title><![CDATA[跨域方法总结]]></title>
+      <url>/2017/07/31/cross-origin/</url>
+      <content type="html"><![CDATA[<h3 id="1-JSONP"><a href="#1-JSONP" class="headerlink" title="1.JSONP"></a>1.JSONP</h3><p>JSON With Padding，用于ajax中的跨域，详见js面试问题二中的<a href="../../../../2017/07/27/js-question-2/">JSONP</a></p>
+<h3 id="2-修改document-domain"><a href="#2-修改document-domain" class="headerlink" title="2.修改document.domain"></a>2.修改document.domain</h3><p>document.domain只能设置成自身或更高一级的父域，且主域必须相同。<br><a id="more"></a></p>
+<p>为了能让父域访问子域，可以通过设置document.domain将子域设置成更高一级的父域。</p>
+<p>例如父域是www.example.com, 子域是www.test.example.com, 要实现这种跨子域的交互，应该在父域和子域的js文件中都设置：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.domain = <span class="string">"www.example.com"</span></div></pre></td></tr></table></figure></p>
+<h3 id="3-window-name"><a href="#3-window-name" class="headerlink" title="3.window.name"></a>3.window.name</h3><p>window对象有一个name属性，该属性有个特征：即在<strong>一个窗口(window)</strong> 的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限</p>
+<h3 id="4-window-postMessage"><a href="#4-window-postMessage" class="headerlink" title="4.window.postMessage"></a>4.window.postMessage</h3><h4 id="1-API说明"><a href="#1-API说明" class="headerlink" title="(1)API说明"></a>(1)API说明</h4><blockquote>
+<p>otherWindow.postMessage(data, origin)<br><strong>otherWindow</strong> 接收消息的窗口对象</p>
+</blockquote>
+<p><strong>data</strong> 要传递的数据，可以是任意基本类型或者可复制的对象，它会自动被序列化，这意味着你可以不受什么限制的将数据对象安全的传送给目标窗口而无需自己序列化</p>
+<p><strong>origin</strong> 字符串参数，指明目标窗口的源（协议+主机+端口号），这个参数控制消息可以发送到哪些窗口，如果设置为*的话表示没有限制</p>
+<blockquote>
+<p>MessageEvent</p>
+</blockquote>
+<p>window.postMessage()方法被调用时，会在所有页面脚本执行完毕之后向目标窗口派发一个 MessageEvent 消息，该消息有4个属性：</p>
+<p><strong>data</strong> 从发送窗口传来的消息</p>
+<p><strong>source</strong> 发送消息的窗口对象</p>
+<p><strong>origin</strong> 发送消息的窗口的源（协议+主机+端口号）</p>
+<h4 id="2-代码实例一"><a href="#2-代码实例一" class="headerlink" title="(2)代码实例一"></a>(2)代码实例一</h4><p>A窗口通过postMessage发送消息，B窗口通过监听message事件接收消息</p>
+<blockquote>
+<p>窗口A：<a href="http://example.a.com" target="_blank" rel="external">http://example.a.com</a> —发送消息</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> popup = <span class="built_in">window</span>.open(<span class="string">'http://example.b.com'</span>);</div><div class="line"></div><div class="line">popup.postMessage(<span class="string">'hello,b'</span>, <span class="string">'http://example.b.com'</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>窗口B：<a href="http://example.b.com" target="_blank" rel="external">http://example.b.com</a> —接收消息</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">receiveMessage</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(event.origin != <span class="string">'http://example.a.com'</span>)&#123;</div><div class="line">        <span class="keyword">return</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(event.data)</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, receiveMessage, <span class="literal">false</span>)</div></pre></td></tr></table></figure>
+<h4 id="3-代码实例二"><a href="#3-代码实例二" class="headerlink" title="(3)代码实例二"></a>(3)代码实例二</h4><p>A窗口和B窗口相互通信，都发送和接收消息</p>
+<blockquote>
+<p>窗口A：<a href="http://example.a.com" target="_blank" rel="external">http://example.a.com</a></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> popup = <span class="built_in">window</span>.open(<span class="string">'http://example.b.com'</span>);</div><div class="line"></div><div class="line">popup.postMessage(<span class="string">'hello,b'</span>, <span class="string">'http://example.b.com'</span>);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">receiveMessage</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(event.origin != <span class="string">'http://example.b.com'</span>)&#123;</div><div class="line">        <span class="keyword">return</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(event.data)</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, receiveMessage, <span class="literal">false</span>)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>窗口B：<a href="http://example.b.com" target="_blank" rel="external">http://example.b.com</a></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">receiveMessage</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(event.origin != <span class="string">'http://example.a.com'</span>)&#123;</div><div class="line">        <span class="keyword">return</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(event.data)</div><div class="line">    event.source.postMessage(<span class="string">'thank you, a'</span>, event.origin);</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, receiveMessage, <span class="literal">false</span>)</div></pre></td></tr></table></figure>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+            <tag> 跨域 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[深复制和浅复制]]></title>
       <url>/2017/07/28/deep-shadow-copy/</url>
       <content type="html"><![CDATA[<h3 id="1-浅复制"><a href="#1-浅复制" class="headerlink" title="1.浅复制"></a>1.浅复制</h3><blockquote>
@@ -136,9 +187,9 @@
         
         <tags>
             
-            <tag> 面试 </tag>
-            
             <tag> javascript </tag>
+            
+            <tag> 面试 </tag>
             
         </tags>
         
@@ -236,9 +287,9 @@
         
         <tags>
             
-            <tag> 面试 </tag>
-            
             <tag> javascript </tag>
+            
+            <tag> 面试 </tag>
             
         </tags>
         
