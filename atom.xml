@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-31T03:28:12.000Z</updated>
+  <updated>2017-08-01T06:23:35.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>react的一些知识</title>
+    <link href="http://yoursite.com/2017/07/31/react-basic/"/>
+    <id>http://yoursite.com/2017/07/31/react-basic/</id>
+    <published>2017-07-31T03:40:09.000Z</published>
+    <updated>2017-08-01T06:23:35.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-虚拟DOM&quot;&gt;&lt;a href=&quot;#1-虚拟DOM&quot; class=&quot;headerlink&quot; title=&quot;1.虚拟DOM&quot;&gt;&lt;/a&gt;1.虚拟DOM&lt;/h3&gt;&lt;p&gt;React的核心机制之一就是虚拟DOM：可以在内存中创建的虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能&lt;/p&gt;
+&lt;h3 id=&quot;2-props和state的区别&quot;&gt;&lt;a href=&quot;#2-props和state的区别&quot; class=&quot;headerlink&quot; title=&quot;2.props和state的区别&quot;&gt;&lt;/a&gt;2.props和state的区别&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;props&lt;/strong&gt; 一般用来父组件向子组件传递数据，而且通常一旦定义就不再改变&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;state&lt;/strong&gt; 一般表示当前组件的一些状态，由组件自身来维护，会随着用户互动而发生变化&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>跨域方法总结</title>

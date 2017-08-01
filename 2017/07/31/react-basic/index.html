@@ -7,23 +7,17 @@
 
     
 
-    <title>hexo 基本命令 | cherry的技术小窝</title>
+    <title>react的一些知识 | cherry的技术小窝</title>
     <meta name="author" content="cherry">
     
-    <meta name="description" content="Hexo官网—— Hexo
-Hexo官方文档—— documentation
-常见问题—— troubleshooting
-提问列表—— GitHub
-
-快速开始1.创建新文章1$ hexo new &quot;My New Post&quot;
-更多信息: Writing
-2.运行服务器1$ hexo server
-">
+    <meta name="description" content="1.虚拟DOMReact的核心机制之一就是虚拟DOM：可以在内存中创建的虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能
+2.props和state的区别props 一般用来父组件向子组件传递数据，而且通常一旦定义就不再改变
+state 一般表示当前组件的一些状态，由组件自身来维护，会随着用户互动而发生变化">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="hexo 基本命令"/>
+    <meta property="og:title" content="react的一些知识"/>
     <meta property="og:site_name" content="cherry的技术小窝"/>
 
     
@@ -214,10 +208,6 @@ Hexo官方文档—— documentation
         <span class="breadcrumb">当前位置（分类目录）</span>
         
             
-    
-    
-    <a class="breadcrumb" href="/categories/命令清单/">命令清单</a><a class="breadcrumb" href="/categories/命令清单/hexo/">hexo</a>
-
 
         
 
@@ -233,12 +223,12 @@ Hexo官方文档—— documentation
             <div class="article-title">
                 
     
-        <h1>hexo 基本命令</h1>
+        <h1>react的一些知识</h1>
     
 
 
             </div>
-            <time class="pink-link-context" datetime="2017-07-24T11:14:24.000Z"><a href="/2017/07/24/hexo-command/">2017-07-24</a></time>
+            <time class="pink-link-context" datetime="2017-07-31T03:40:09.000Z"><a href="/2017/07/31/react-basic/">2017-07-31</a></time>
 
             <span id="busuanzi_container_page_pv" class="read-times-container">
     <i class="fa fa-eye"></i>
@@ -248,46 +238,51 @@ Hexo官方文档—— documentation
             
     <div class="tags-row">
         
-            <a href="/tags/命令清单/" class="chip pink lighten-1">命令清单</a>
-        
-            <a href="/tags/hexo/" class="chip pink lighten-1">hexo</a>
+            <a href="/tags/react/" class="chip pink lighten-1">react</a>
         
     </div>
 
 
             <div class="toc pink-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#快速开始"><span class="section table-of-contents-text">快速开始</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-创建新文章"><span class="section table-of-contents-text">1.创建新文章</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-运行服务器"><span class="section table-of-contents-text">2.运行服务器</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-生成静态文件"><span class="section table-of-contents-text">3.生成静态文件</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-部署到网站"><span class="section table-of-contents-text">4.部署到网站</span></a></li></ol></li></ol>
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1-虚拟DOM"><span class="section table-of-contents-text">1.虚拟DOM</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2-props和state的区别"><span class="section table-of-contents-text">2.props和state的区别</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3-diff算法"><span class="section table-of-contents-text">3.diff算法</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4-组件的生命周期"><span class="section table-of-contents-text">4.组件的生命周期</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5-优点"><span class="section table-of-contents-text">5.优点</span></a></li></ol>
 </div>
 
 
             <div class="entry pink-link-context">
-                <ul>
-<li>Hexo官网—— <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a></li>
-<li>Hexo官方文档—— <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a></li>
-<li>常见问题—— <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a></li>
-<li>提问列表—— <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a></li>
+                <h3 id="1-虚拟DOM"><a href="#1-虚拟DOM" class="headerlink" title="1.虚拟DOM"></a>1.虚拟DOM</h3><p>React的核心机制之一就是虚拟DOM：可以在内存中创建的虚拟DOM元素。React利用虚拟DOM来减少对实际DOM的操作从而提升性能</p>
+<h3 id="2-props和state的区别"><a href="#2-props和state的区别" class="headerlink" title="2.props和state的区别"></a>2.props和state的区别</h3><p><strong>props</strong> 一般用来父组件向子组件传递数据，而且通常一旦定义就不再改变</p>
+<p><strong>state</strong> 一般表示当前组件的一些状态，由组件自身来维护，会随着用户互动而发生变化<br><a id="more"></a></p>
+<h3 id="3-diff算法"><a href="#3-diff算法" class="headerlink" title="3.diff算法"></a>3.diff算法</h3><p>react中所有的DOM构建都是通过<strong>虚拟DOM</strong>进行的，当组件的状态或属性发生变化时，react都会重新构建整个DOM树，并将当前整个DOM树和上一次的DOM树进行对比，这里使用到了diff算法。开发者不需再关注当数据发生变化时如何操作DOM，而只要考虑某个状态下界面应该展示的内容。</p>
+<blockquote>
+<p>diff算法</p>
+</blockquote>
+<p>react提出了两个假设：<br><strong>1.两个相同组件产生类似的DOM结构，不同的组件产生不同的DOM结构</strong>。<br><strong>2.对于同一层次的一组子节点，它们可以通过唯一的id进行区分</strong></p>
+<p>在这种假设上将两棵DOM树进行逐层比较，如果发现对应的节点是不同的，那就<strong>直接删除旧的节点及其所有子节点、替换成新的节点</strong>；如果是相同的，则<strong>只进行属性的更改</strong>。<br><img src="http://ojx4wlqvg.bkt.clouddn.com/image/blog/dom-diff.png" alt="逐行进行节点比较" width="90%" style="margin-left: 5%"></p>
+<p>对于列表节点的比较，因为列表通常具有相同的结构，在对列表进行插入删除替换等操作时，单个节点的整体操作比一个个对比一个个替换的效率高，所以在创建列表的时候会给每一项设置key值。</p>
+<p>关于diff算法，这篇博客解释得非常清楚：<a href="http://www.infoq.com/cn/articles/react-dom-diff" target="_blank" rel="external">虚拟DOM Diff算法解析</a></p>
+<h3 id="4-组件的生命周期"><a href="#4-组件的生命周期" class="headerlink" title="4.组件的生命周期"></a>4.组件的生命周期</h3><p><img src="http://ojx4wlqvg.bkt.clouddn.com/image/blog/react-lifecycle.png" alt="react生命周期" width="90%" style="margin-left: 5%"></p>
+<ul>
+<li>componentWillMount()</li>
+<li>componentDidMount()</li>
+<li>componentWillReceiveProps(nextProps)</li>
+<li>shouldComponentUpdate(nextProps, nextState)</li>
+<li>componentWillUpdate(nextProps, nextState)</li>
+<li>componentDidUpdate(prevProps, prevState)</li>
+<li>componentWillUnmount()</li>
 </ul>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="1-创建新文章"><a href="#1-创建新文章" class="headerlink" title="1.创建新文章"></a>1.创建新文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>更多信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="2-运行服务器"><a href="#2-运行服务器" class="headerlink" title="2.运行服务器"></a>2.运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>更多信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="3-生成静态文件"><a href="#3-生成静态文件" class="headerlink" title="3.生成静态文件"></a>3.生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>更多信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="4-部署到网站"><a href="#4-部署到网站" class="headerlink" title="4.部署到网站"></a>4.部署到网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>更多信息: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<h3 id="5-优点"><a href="#5-优点" class="headerlink" title="5.优点"></a>5.优点</h3><ul>
+<li><p>1.虚拟DOM性能高<br>它不直接对实际的DOM进行操作，而是引入了虚拟DOM的概念，实现对DOM的局部刷新，提高了性能</p>
+</li>
+<li><p>2.模块化<br>页面可以分为多个组件的组合，每个组件可以进行独立的开发，便于分工，提高可复用性</p>
+</li>
+</ul>
 
                 
-<p class="pink-link-context">
-    <a href="/2017/07/24/html-question/" rel="next" title="html 面试问题">
-    上一篇：html 面试问题
-  </a>
-</p>
-
 
 
 <p class="pink-link-context">
-    <a href="/2017/07/24/git-command/" rel="next" title="git 基本命令">
-    下一篇：git 基本命令
+    <a href="/2017/07/31/cross-origin/" rel="next" title="跨域方法总结">
+    下一篇：跨域方法总结
   </a>
 </p>
 

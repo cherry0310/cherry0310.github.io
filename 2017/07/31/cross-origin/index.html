@@ -287,6 +287,12 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">receiveMessage</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(event.origin != <span class="string">'http://example.a.com'</span>)&#123;</div><div class="line">        <span class="keyword">return</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(event.data)</div><div class="line">    event.source.postMessage(<span class="string">'thank you, a'</span>, event.origin);</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, receiveMessage, <span class="literal">false</span>)</div></pre></td></tr></table></figure>
 
                 
+<p class="pink-link-context">
+    <a href="/2017/07/31/react-basic/" rel="next" title="react的一些知识">
+    上一篇：react的一些知识
+  </a>
+</p>
+
 
 
 <p class="pink-link-context">
@@ -595,15 +601,6 @@
 
 
 
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-<script type="text/javascript" async
-  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
 
 
 
